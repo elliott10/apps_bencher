@@ -1,4 +1,4 @@
-# ArceOS Task Scheduling Benchmark
+# Task Scheduling Benchmark
 
 A benchmark suite for evaluating OS task scheduling performance, designed for the [ArceOS](https://github.com/rcore-os/arceos) operating system.
 
@@ -6,17 +6,10 @@ A benchmark suite for evaluating OS task scheduling performance, designed for th
 
 This benchmark measures the performance of key task scheduling operations:
 
+- **switch**: Context switch latency between two threads
 - **rdtsc**: Timer read overhead (TSC on x86_64, CNTVCT_EL0 on aarch64)
 - **spawn**: Thread creation and termination latency
-- **switch**: Context switch latency between two threads
-- **condvar**: Condition variable wait/notify performance (optional)
-
-## Supported Platforms
-
-| Architecture | QEMU | RK3588 Hardware |
-|--------------|------|-----------------|
-| x86_64       | ✓    | -               |
-| aarch64      | ✓    | ✓               |
+- **condvar**: Condition variable wait/notify performance
 
 ## Building
 
@@ -30,19 +23,14 @@ cargo build --features "axstd,qemu" --target aarch64-unknown-none-softfloat
 cargo build --features "axstd" --target aarch64-unknown-none-softfloat
 ```
 
-### For Linux/macOS (native)
-
-```bash
-cargo build --no-default-features
-```
-
 ## Running
 
 ### On QEMU
 
 ```bash
 # From ArceOS root directory
-make run A=apps/benchmarks/arceos-bencher ARCH=aarch64 FEATURES=qemu
+
+make A=apps/bencher PLATFORM=aarch64-qemu-virt MODE=release LOG=info SMP=1 FEATURES="alloc,multitask,driver-ramdisk,irq" run
 ```
 
 ### On RK3588 Hardware
@@ -61,6 +49,12 @@ Connect a logic analyzer or oscilloscope to GPIO3_C6 to measure actual context s
 
 ## Benchmark Details
 
+### switch
+Measures context switch latency between two cooperating threads.
+- Each thread yields `iter/2` times
+- Single switch time = total_time / iterations
+- Default: 100,000,000 switches per measurement, repeated 100 times
+
 ### rdtsc
 Measures the overhead of reading the system timer counter.
 - x86_64: Uses `__rdtscp` instruction
@@ -68,19 +62,12 @@ Measures the overhead of reading the system timer counter.
 
 ### spawn
 Measures thread creation latency by spawning and joining threads in a loop.
-- 500,000 iterations (ArceOS)
-- 200,000 iterations (Linux/macOS)
-
-### switch
-Measures context switch latency between two cooperating threads.
-- Each thread yields `iter/2` times
-- Single switch time = total_time / iterations
-- Default: 100,000,000 switches per measurement, repeated 100 times
+- 500,000/200,000 iterations
 
 ### condvar (optional)
 Measures condition variable signaling overhead.
 - 5,000,000 iterations
-- Uses wait queue on ArceOS, standard Condvar on Linux/macOS
+- Uses wait queue OR standard Condvar
 
 ## Measurement Methodology
 
@@ -100,15 +87,8 @@ On aarch64, the benchmark enables user-mode access to Performance Monitoring Uni
 
 ### Output Format
 
-```
-Benchmark: switch
-  Iterations: 100000000
-  Benchmark total duration: 42 s
-  Average timer nanoseconds: 420 ns
-  Min CPU cycles: 1008
-  Average CPU cycles: 1008
-  Max CPU cycles: 1008
-```
+![oscil](docs/oscilloscope-202606.png)
+![data](docs/bencer-data-202606.png)
 
 ## Dependencies
 
