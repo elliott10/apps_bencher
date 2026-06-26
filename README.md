@@ -87,7 +87,7 @@ On aarch64, the benchmark enables user-mode access to Performance Monitoring Uni
 
 ### Output Format
 
-![oscil](docs/oscilloscope-202606.png)
+![oscil](docs/oscilloscope-202606.jpeg)
 ![data](docs/bencer-data-202606.png)
 
 ## Dependencies
