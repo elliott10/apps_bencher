@@ -1,20 +1,148 @@
+DDR d5483af87d cym 23/11/23-16:15:24,fwver: v1.15
+LPDDR4, 2112MHz
+channel[0] BW=16 Col=10 Bk=8 CS0 Row=16 CS1 Row=16 CS=2 Die BW=16 Size=2048MB
+channel[1] BW=16 Col=10 Bk=8 CS0 Row=16 CS1 Row=16 CS=2 Die BW=16 Size=2048MB
+channel[2] BW=16 Col=10 Bk=8 CS0 Row=16 CS1 Row=16 CS=2 Die BW=16 Size=2048MB
+channel[3] BW=16 Col=10 Bk=8 CS0 Row=16 CS1 Row=16 CS=2 Die BW=16 Size=2048MB
+Manufacturer ID:0xff
+CH0 RX Vref:32.2%, TX Vref:13.2%,13.2%
+CH1 RX Vref:32.6%, TX Vref:13.2%,13.2%
+CH2 RX Vref:35.2%, TX Vref:13.2%,13.2%
+CH3 RX Vref:35.7%, TX Vref:13.2%,13.2%
+change to F1: 528MHz
+change to F2: 1068MHz
+change to F3: 1560MHz
+change to F0: 2112MHz
+out
+U-Boot SPL board init
+U-Boot SPL 2017.09-ge4e124926e-230922 #lxh (Sep 25 2023 - 10:58:38), fwver: v1.13
+unknown raw ID 0 0 0
+unrecognized JEDEC id bytes: 00, 00, 00
+Trying to boot from MMC2
+MMC: no card present
+mmc_init: -123, time 0
+spl: mmc init failed with error: -123
+Trying to boot from MMC1
+SPL: A/B-slot: _a, successful: 0, tries-remain: 7
+Trying fit image at 0x4000 sector
+## Verified-boot: 0
+## Checking atf-1 0x00040000 ... sha256(2e8446f969...) + OK
+## Checking uboot 0x00200000 ... sha256(b4cb6b5ede...) + OK
+## Checking fdt 0x00369208 ... sha256(a434b1c4fe...) + OK
+## Checking atf-2 0xff100000 ... sha256(9f75e6ec37...) + OK
+## Checking atf-3 0x000f0000 ... sha256(c80587de50...) + OK
+## Checking optee 0x08400000 ... sha256(4b2d406bfc...) + OK
+Jumping to U-Boot(0x00200000) via ARM Trusted Firmware(0x00040000)
+Total: 88.732/263.550 ms
 
-arch_number = 0x00000000
-boot_params = 0x00000000
-DRAM bank   = 0x00000000
--> start    = 0x00200000
--> size     = 0x08200000
-DRAM bank   = 0x00000001
--> start    = 0x09400000
--> size     = 0xE6C00000
-baudrate    = 1500000 bps
-TLB addr    = 0xEFFF0000
-relocaddr   = 0xEDBF4000
-reloc off   = 0xED9F4000
-irq_sp      = 0xEB7F9ED0
-sp start    = 0xEB7F9ED0
-Early malloc usage: 3498 / 80000
-fdt_blob = 0000000008300000
+INFO:    Preloader serial: 2
+NOTICE:  BL31: v2.3():v2.3-662-g4acbe711b-dirty:finley.xiao, fwver: v1.44
+NOTICE:  BL31: Built : 16:44:24, Nov  7 2023
+INFO:    spec: 0x13
+INFO:    code: 0x88
+INFO:    ext 32k is not valid
+INFO:    ddr: stride-en 4CH
+INFO:    GICv3 without legacy support detected.
+INFO:    ARM GICv3 driver initialized in EL3
+INFO:    valid_cpu_msk=0xff bcore0_rst = 0x0, bcore1_rst = 0x0
+INFO:    l3 cache partition cfg-0
+INFO:    system boots from cpu-hwid-0
+INFO:    idle_st=0x21fff, pd_st=0x11fff9, repair_st=0xfff70001
+INFO:    dfs DDR fsp_params[0].freq_mhz= 2112MHz
+INFO:    dfs DDR fsp_params[1].freq_mhz= 528MHz
+INFO:    dfs DDR fsp_params[2].freq_mhz= 1068MHz
+INFO:    dfs DDR fsp_params[3].freq_mhz= 1560MHz
+INFO:    BL31: Initialising Exception Handling Framework
+INFO:    BL31: Initializing runtime services
+INFO:    BL31: Initializing BL32
+I/TC: 
+I/TC: OP-TEE version: 3.13.0-752-g62aa10b78 #hisping.lin (gcc version 10.2.1 20201103 (GNU Toolchain for the A-profile Architecture 10.2-2020.11 (arm-10.16))) #2 Mon Sep 25 10:04:34 CST 2023 aarch64, fwver: v1.15 
+I/TC: Primary CPU initializing
+I/TC: Primary CPU switching to normal world boot
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x200000
+INFO:    SPSR = 0x3c9
+
+
+U-Boot 2017.09(u-boot commit id: f83f9138f5)(sdk version: rk3588_linux_release_20240826_v1.4.0c)-gf83f9138f5-231011 #zhangzz (Sep 05 2024 - 11:43:21 +0800)
+
+Model: Rockchip RK3588 Evaluation Board
+MPIDR: 0x81000000
+PreSerial: 2, raw, 0xfeb50000
+DRAM:  8 GiB
+Sysmem: init
+Relocation Offset: ed9f4000
+Relocation fdt: eb7f9ee0 - eb7fecd8
+CR: M/C/I
+Using default environment
+
+optee api revision: 2.0
+mmc@fe2c0000: 1, mmc@fe2e0000: 0
+Bootdev(atags): mmc 0
+MMC0: HS400 Enhanced Strobe, 200Mhz
+PartType: EFI
+TEEC: Waring: Could not find security partition
+DM: v2
+extboot part -> 3
+** Unrecognized filesystem type **
+boot mode: None
+RESC: 'boot', blk@0x00017d0c
+lib/avb/libavb_user/avb_ops_user.c: trusty_read_lock_state failed
+Error determining whether device is unlocked.
+Device is: UNLOCKED
+DTB: rk-kernel.dtb
+HASH(c): OK
+I2c0 speed: 100000Hz
+vsel-gpios- not found!
+en-gpios- not found!
+vdd_cpu_big0_s0 800000 uV
+vsel-gpios- not found!
+en-gpios- not found!
+vdd_cpu_big1_s0 800000 uV
+I2c2 speed: 400000Hz
+vsel-gpios- not found!
+en-gpios- not found!
+vdd_npu_s0 800000 uV
+spi2: RK806: 2
+ON=0x40, OFF=0x00
+vdd_gpu_s0 750000 uV
+vdd_cpu_lit_s0 750000 uV
+vdd_log_s0 750000 uV
+vdd_vdenc_s0 init 750000 uV
+vdd_ddr_s0 850000 uV
+Firefly fixed_regulator_set_enable: dev='vcc5v0-host', enable=1, delay=1200000, has_gpio=1
+Firefly fixed_regulator_set_enable: dev='vcc-hub-reset-regulator', enable=1, delay=0, has_gpio=1
+serdes_power_init failed to get serdes misc device
+rockchip_dw_hdmi_qp_probe: can't get link_clk
+Warn: can't find connect driver
+Warn: can't get connect driver
+Cannot get enable GPIO: -16
+Warn: can't find connect driver
+Warn: can't get connect driver
+Model: Firefly ROC-RK3588S-PC HDMI(Linux)
+MPIDR: 0x81000000
+Minidump: init...
+CLK: (uboot. arm: enter 1008000 KHz, init 1008000 KHz, kernel 0N/A)
+  b0pll 24000 KHz
+  b1pll 24000 KHz
+  lpll 24000 KHz
+  v0pll 24000 KHz
+  aupll 786431 KHz
+  cpll 1500000 KHz
+  gpll 1188000 KHz
+  npll 850000 KHz
+  ppll 1100000 KHz
+  aclk_center_root 702000 KHz
+  pclk_center_root 100000 KHz
+  hclk_center_root 396000 KHz
+  aclk_center_low_root 500000 KHz
+  aclk_top_root 594000 KHz
+  pclk_top_root 100000 KHz
+  aclk_low_top_root 396000 KHz
+Net:   Device 'gpio@fd8a0000': seq 0 is in use by 'gpio@fd8a0000'
+eth1: ethernet@fe1c0000
+Hit key to stop autoboot('CTRL+C'):  0
+=> <INTERRUPT>
 => load mmc 0:6 0x00400000 /boot/Image_rk3588; load mmc 0:6 0x10000000 /boot/rk3588.bin; bootm 0x00400000 - 0x10000000;
 =================begin===================
 24926688 bytes read in 82 ms (289.9 MiB/s)
@@ -42,7 +170,7 @@ Adding bank: 0x00200000 - 0x08400000 (size: 0x08200000)
 Adding bank: 0x09400000 - 0xf0000000 (size: 0xe6c00000)
 Adding bank: 0x100000000 - 0x200000000 (size: 0x100000000)
 Adding bank: 0x2f0000000 - 0x300000000 (size: 0x10000000)
-Total: 62390.420/62737.537 ms
+Total: 16178.388/16528.937 ms
 
 Starting kernel ...
 
@@ -57,39 +185,39 @@ init buddy system, heap start from 1c57000 with size 4 MB
 [I]>0[rust_shyper::kernel::mem] Mem init ok
 [I]>0[rust_shyper::device::device_tree] fdt 0x10000000 has original size 155648
 [W]>0[rust_shyper::kernel::iommu] Platform not support IOMMU
-[I]>I/TC: Secondary CPU 1 initializing
-0[ruI/TC: Secondary CPU 1 switching to normal world boot
-st_shypeI/TC: Secondary CPU 7 initializing
-r::kerneI/TC: Secondary CPU 7 switching to normal world boot
-l::cpu] I/TC: Secondary CPU 6 initializing
-CoreI/TC: Secondary CPU 6 switching to normal world boot
- 0 iI/TC: Secondary CPU 2 initializing
-nit oI/TC: Secondary CPU 2 switching to normal world boot
-kI/TC: Secondary CPU 3 initializing
-
-/TC: Secondary CPU 3 switching to normal world boot
-[34mI/TC: Secondary CPU 4 initializing
-[I]>1[rust_I/TC: Secondary CPU 4 switching to normal world boot
-shyper::kernI/TC: Secondary CPU 5 initializing
-el::cpu] CoI/TC: Secondary CPU 5 switching to normal world boot
-re 1 init ok
+[I]>0[rusI/TC: Secondary CPU 1 initializing
+t_sI/TC: Secondary CPU 1 switching to normal world boot
+hyper::kI/TC: Secondary CPU 7 initializing
+ernel:I/TC: Secondary CPU 7 switching to normal world boot
+:cpu] I/TC: Secondary CPU 6 initializing
+Core 0 I/TC: Secondary CPU 6 switching to normal world boot
+init ok/TC: Secondary CPU 5 initializing
+0m
+/TC: Secondary CPU 5 switching to normal world boot
+m[I]>1[I/TC: Secondary CPU 4 initializing
+rust_shyI/TC: Secondary CPU 4 switching to normal world boot
+per:I/TC: Secondary CPU 3 initializing
+:kernI/TC: Secondary CPU 3 switching to normal world boot
+el::cpI/TC: Secondary CPU 2 initializing
+u] I/TC: Secondary CPU 2 switching to normal world boot
+Core 1 init ok
 [I]>7[rust_shyper::kernel::cpu] Core 7 init ok
 [I]>6[rust_shyper::kernel::cpu] Core 6 init ok
-[I]>2[rust_shyper::kernel::cpu] Core 2 init ok
-[I]>3[rust_shyper::kernel::cpu] Core 3 init ok
-[I]>4[rust_shyper::kernel::cpu] Core 4 init ok
 [I]>5[rust_shyper::kernel::cpu] Core 5 init ok
+[I]>4[rust_shyper::kernel::cpu] Core 4 init ok
+[I]>3[rust_shyper::kernel::cpu] Core 3 init ok
+[I]>2[rust_shyper::kernel::cpu] Core 2 init ok
 [I]>0[rust_shyper::kernel::cpu] Bring up 8 cores
 [I]>0[rust_shyper::kernel::cpu] Cpu init ok
 [I]>0[rust_shyper::kernel::interrupt] Interrupt init ok
 [I]>7[rust_shyper::kernel::vcpu_array] cpu[7] init Round Robin Scheduler
-[I]>5[rust_shyper::kernel::vcpu_array] cpu[5] init Round Robin Scheduler
 [I]>6[rust_shyper::kernel::vcpu_array] cpu[6] init Round Robin Scheduler
+[I]>5[rust_shyper::kernel::vcpu_array] cpu[5] init Round Robin Scheduler
+[I]>4[rust_shyper::kernel::vcpu_array] cpu[4] init Round Robin Scheduler
+[I]>3[rust_shyper::kernel::vcpu_array] cpu[3] init Round Robin Scheduler
 [I]>0[rust_shyper::kernel::timer] Timer frequency: 24000000Hz
 [I]>2[rust_shyper::kernel::vcpu_array] cpu[2] init Round Robin Scheduler
 [I]>1[rust_shyper::kernel::vcpu_array] cpu[1] init Round Robin Scheduler
-[I]>4[rust_shyper::kernel::vcpu_array] cpu[4] init Round Robin Scheduler
-[I]>3[rust_shyper::kernel::vcpu_array] cpu[3] init Round Robin Scheduler
 [I]>0[rust_shyper::kernel::timer] Timer init ok
 [I]>0[rust_shyper::kernel::vcpu_array] cpu[0] init Round Robin Scheduler
 [I]>0[rust_shyper::config::rk3588_def] mvm_config_init() init config for VM0, which is manager VM
@@ -131,61 +259,61 @@ Successfully add MVM[0] name "RK3588", currently vm_num 1
 
 Start booting Monitor VM ...
 [I]>0[rust_shyper::vmm::init] Core 0 start running
-[   62.984710] Booting Linux on physical CPU 0x0000000000 [0x412fd050]
-[   62.984736] Linux version 5.10.160 (cwm@cwm) (kernel commit id: dc384cc20ddf) (sdk version: rk3588_linux_bsp_release_20230704_v1.1.1a) (aarch64-none-linux-gnu-gcc (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) 10.3.1 20210621, GNU ld (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) 2.36.1.20210621) #19 SMP Wed Sep 20 22:16:07 CST 2023
-[   62.987591] random: crng init done
-[   62.994216] Machine model: Firefly ROC-RK3588S-PC V13 MIPI(Linux)
-[   62.994247] earlycon: uart8250 at MMIO32 0x00000000feb50000 (options '')
-[   62.999399] printk: bootconsole [uart8250] enabled
-[   63.001781] efi: UEFI not found.
-[   63.002080] [Firmware Bug]: Kernel image misaligned at boot, please fix your bootloader!
-[   63.006541] OF: fdt: Reserved memory: failed to reserve memory for node 'drm-logo@00000000': base 0x0000000000000000, size 0 MiB
-[   63.008355] OF: fdt: Reserved memory: failed to reserve memory for node 'drm-cubic-lut@00000000': base 0x0000000000000000, size 0 MiB
-[   63.009515] Reserved memory: created CMA memory pool at 0x000000007f800000, size 8 MiB
-[   63.010244] OF: reserved mem: initialized node cma, compatible id shared-dma-pool
-[   63.056722] Zone ranges:
-[   63.056964]   DMA      [mem 0x0000000009400000-0x000000007fffffff]
-[   63.057538]   DMA32    empty
-[   63.057807]   Normal   empty
-[   63.058076] Movable zone start for each node
-[   63.058469] Early memory node ranges
-[   63.058801]   node   0: [mem 0x0000000009400000-0x000000007fffffff]
-[   63.059376] Initmem setup node 0 [mem 0x0000000009400000-0x000000007fffffff]
-[   63.071422] psci: probing for conduit method from DT.
+[   16.776110] Booting Linux on physical CPU 0x0000000000 [0x412fd050]
+[   16.776137] Linux version 5.10.160 (cwm@cwm) (kernel commit id: dc384cc20ddf) (sdk version: rk3588_linux_bsp_release_20230704_v1.1.1a) (aarch64-none-linux-gnu-gcc (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) 10.3.1 20210621, GNU ld (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) 2.36.1.20210621) #19 SMP Wed Sep 20 22:16:07 CST 2023
+[   16.778989] random: crng init done
+[   16.785612] Machine model: Firefly ROC-RK3588S-PC V13 MIPI(Linux)
+[   16.785644] earlycon: uart8250 at MMIO32 0x00000000feb50000 (options '')
+[   16.790804] printk: bootconsole [uart8250] enabled
+[   16.793185] efi: UEFI not found.
+[   16.793486] [Firmware Bug]: Kernel image misaligned at boot, please fix your bootloader!
+[   16.797947] OF: fdt: Reserved memory: failed to reserve memory for node 'drm-logo@00000000': base 0x0000000000000000, size 0 MiB
+[   16.799760] OF: fdt: Reserved memory: failed to reserve memory for node 'drm-cubic-lut@00000000': base 0x0000000000000000, size 0 MiB
+[   16.800920] Reserved memory: created CMA memory pool at 0x000000007f800000, size 8 MiB
+[   16.801650] OF: reserved mem: initialized node cma, compatible id shared-dma-pool
+[   16.848103] Zone ranges:
+[   16.848345]   DMA      [mem 0x0000000009400000-0x000000007fffffff]
+[   16.848921]   DMA32    empty
+[   16.849191]   Normal   empty
+[   16.849459] Movable zone start for each node
+[   16.849853] Early memory node ranges
+[   16.850185]   node   0: [mem 0x0000000009400000-0x000000007fffffff]
+[   16.850766] Initmem setup node 0 [mem 0x0000000009400000-0x000000007fffffff]
+[   16.862808] psci: probing for conduit method from DT.
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x84000000, x1 0x0, x2 0x0, x3 0x0
-[   63.072698] psci: PSCIv1.1 detected in firmware.
-[   63.073128] psci: Using standard PSCI v0.2 function IDs
+[   16.864082] psci: PSCIv1.1 detected in firmware.
+[   16.864513] psci: Using standard PSCI v0.2 function IDs
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x84000006, x1 0x0, x2 0x0, x3 0x0
-[   63.074410] psci: Trusted OS migration not required
+[   16.865794] psci: Trusted OS migration not required
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x8400000a, x1 0x80000000, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x80000000, x1 0x0, x2 0x0, x3 0x0
-[   63.076529] psci: SMC Calling Convention v1.2
+[   16.867914] psci: SMC Calling Convention v1.2
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x8400000a, x1 0xc4000001, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x8400000a, x1 0xc400000e, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x8400000a, x1 0xc4000012, x2 0x0, x3 0x0
-[   63.079624] percpu: Embedded 32 pages/cpu s92840 r8192 d30040 u131072
-[   63.080370] Detected VIPT I-cache on CPU0
-[   63.080777] CPU features: detected: GIC system register CPU interface
-[   63.081376] CPU features: detected: ARM errata 1165522, 1319367, or 1530923
+[   16.871008] percpu: Embedded 32 pages/cpu s92840 r8192 d30040 u131072
+[   16.871754] Detected VIPT I-cache on CPU0
+[   16.872163] CPU features: detected: GIC system register CPU interface
+[   16.872762] CPU features: detected: ARM errata 1165522, 1319367, or 1530923
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x80000001, x1 0x80003fff, x2 0x410fd050, x3 0x200000
-[   63.083022] Built 1 zonelists, mobility grouping on.  Total pages: 478800
-[   63.083652] Kernel command line: earlycon=uart8250,mmio32,0xfeb50000  console=ttyFIQ,9600n8 irqchip.gicv3_pseudo_nmi=0 root=/dev/mmcblk0p6 rootfstype=ext4 rootwait rw default_hugepagesz=32M hugepagesz=32M hugepages=4
-[   63.085951] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
-[   63.086791] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
-[   63.087505] mem auto-init: stack:off, heap alloc:off, heap free:off
-[   63.105164] Memory: 1743076K/1945600K available (12288K kernel code, 3144K rwdata, 4440K rodata, 3904K init, 639K bss, 194332K reserved, 8192K cma-reserved)
-[   63.106575] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
-[   63.107375] rcu: Hierarchical RCU implementation.
-[   63.107812] rcu: 	RCU event tracing is enabled.
-[   63.108231] rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=1.
-[   63.108831] 	Tracing variant of Tasks RCU enabled.
-[   63.109273] rcu: RCU calculated value of scheduler-enlistment delay is 30 jiffies.
-[   63.109967] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
-[   63.114490] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
-[   63.116981] GICv3: 480 SPIs implemented
-[   63.117339] GICv3: 0 Extended SPIs implemented
-[   63.117775] GICv3: Distributor has no Range Selector support
-[   63.118304] GICv3: 16 PPIs implemented
+[   16.874407] Built 1 zonelists, mobility grouping on.  Total pages: 478800
+[   16.875038] Kernel command line: earlycon=uart8250,mmio32,0xfeb50000  console=ttyFIQ,9600n8 irqchip.gicv3_pseudo_nmi=0 root=/dev/mmcblk0p6 rootfstype=ext4 rootwait rw default_hugepagesz=32M hugepagesz=32M hugepages=4
+[   16.877336] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[   16.878175] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[   16.878888] mem auto-init: stack:off, heap alloc:off, heap free:off
+[   16.896571] Memory: 1743076K/1945600K available (12288K kernel code, 3144K rwdata, 4440K rodata, 3904K init, 639K bss, 194332K reserved, 8192K cma-reserved)
+[   16.897979] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[   16.898779] rcu: Hierarchical RCU implementation.
+[   16.899217] rcu: 	RCU event tracing is enabled.
+[   16.899631] rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=1.
+[   16.900232] 	Tracing variant of Tasks RCU enabled.
+[   16.900676] rcu: RCU calculated value of scheduler-enlistment delay is 30 jiffies.
+[   16.901373] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[   16.905906] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[   16.908378] GICv3: 480 SPIs implemented
+[   16.908735] GICv3: 0 Extended SPIs implemented
+[   16.909171] GICv3: Distributor has no Range Selector support
+[   16.909700] GICv3: 16 PPIs implemented
 [W]>0[rust_shyper::arch::aarch64::vgicv3] emu_icfgr_access: vm[0] does not have interrupt 64
 [W]>0[rust_shyper::arch::aarch64::vgicv3] emu_icfgr_access: vm[0] does not have interrupt 288
 [W]>0[rust_shyper::arch::aarch64::vgicv3] emu_icfgr_access: vm[0] does not have interrupt 464
@@ -269,402 +397,402 @@ Start booting Monitor VM ...
 [W]>0[rust_shyper::arch::aarch64::vgicv3] emu_icenabler_access: vm[0] does not have interrupt 288
 [W]>0[rust_shyper::arch::aarch64::vgicv3] emu_activer_access: vm[0] does not have interrupt 480
 [W]>0[rust_shyper::arch::aarch64::vgicv3] emu_icenabler_access: vm[0] does not have interrupt 480
-[   63.187244] GICv3: CPU0: found redistributor 0 region 0:0x00000000fe680000
+[   16.978638] GICv3: CPU0: found redistributor 0 region 0:0x00000000fe680000
 [W]>0[rust_shyper::arch::aarch64::vgicv3] emu_ipriorityr_access: vm[0] does not have interrupt 16
-[   63.311144] arch_timer: cp15 timer(s) running at 24.00MHz (virt).
-[   63.311708] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
-[   63.312695] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[   17.102490] arch_timer: cp15 timer(s) running at 24.00MHz (virt).
+[   17.103053] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[   17.104040] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x80000001, x1 0xc5000020, x2 0x0, x3 0xffffffc0095e2960
-[   63.315402] Console: colour dummy device 80x25
-[   63.315830] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=80000)
-[   63.316771] pid_max: default: 32768 minimum: 301
-[   63.317280] LSM: Security Framework initializing
-[   63.317752] Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
-[   63.318435] Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
-[   63.320602] rcu: Hierarchical SRCU implementation.
-[   63.321746] msi-controller@fe640000: unable to locate ITS domain
-[   63.322300] msi-controller@fe660000: unable to locate ITS domain
-[   63.323118] msi-controller@fe640000: Unable to locate ITS domain
-[   63.323670] msi-controller@fe660000: Unable to locate ITS domain
-[   63.324313] EFI services will not be available.
-[   63.324837] smp: Bringing up secondary CPUs ...
-[   63.325256] smp: Brought up 1 node, 1 CPU
-[   63.325624] SMP: Total of 1 processors activated.
-[   63.326057] CPU features: detected: Privileged Access Never
-[   63.326581] CPU features: detected: User Access Override
-[   63.327069] CPU features: detected: 32-bit EL0 Support
-[   63.327539] CPU features: detected: Common not Private translations
-[   63.328112] CPU features: detected: RAS Extension Support
-[   63.328606] CPU features: detected: Data cache clean to the PoU not required for I/D coherence
-[   63.329392] CPU features: detected: CRC32 instructions
-[   63.329862] CPU features: detected: Speculative Store Bypassing Safe (SSBS)
-[   63.330507] CPU features: detected: 32-bit EL1 Support
-[   63.330978] CPU features: detected: RCpc load-acquire (LDAPR)
-[   63.331553] CPU: All CPU(s) started at EL1
-[   63.331944] alternatives: patching kernel code
-[   63.333553] devtmpfs: initialized
-[   63.356751] Registered cp15_barrier emulation handler
-[   63.357220] Registered setend emulation handler
-[   63.357810] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6370867519511994 ns
-[   63.358706] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
-[   63.359448] pinctrl core: initialized pinctrl subsystem
-[   63.360448] DMI not present or invalid.
-[   63.361076] NET: Registered protocol family 16
-[   63.362122] DMA: preallocated 256 KiB GFP_KERNEL pool for atomic allocations
-[   63.362819] DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
-[   63.363556] audit: initializing netlink subsys (disabled)
-[   63.365155] Registered FIQ tty driver
-[   63.365803] thermal_sys: Registered thermal governor 'fair_share'
-[   63.365808] thermal_sys: Registered thermal governor 'step_wise'
-[   63.366366] thermal_sys: Registered thermal governor 'user_space'
-[   63.366915] thermal_sys: Registered thermal governor 'power_allocator'
-[   63.367638] OF: /thermal-zones/soc-thermal/cooling-maps/map1: could not find phandle
-[   63.368955] thermal_sys: Add a cooling_device property with at least one device
-[   63.369625] thermal_sys: failed to build thermal zone soc-thermal: -2
-[   63.370226] audit: type=2000 audit(0.046:1): state=initialized audit_enabled=0 res=1
-[   63.371036] thermal thermal_zone0: power_allocator: sustainable_power will be estimated
-[   63.371862] thermal thermal_zone1: power_allocator: sustainable_power will be estimated
-[   63.372669] thermal thermal_zone2: power_allocator: sustainable_power will be estimated
-[   63.373482] thermal thermal_zone3: power_allocator: sustainable_power will be estimated
-[   63.374287] thermal thermal_zone4: power_allocator: sustainable_power will be estimated
-[   63.375096] thermal thermal_zone5: power_allocator: sustainable_power will be estimated
-[   63.375848] cpuidle: using governor menu
-[   63.376520] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
-[   63.377166] ASID allocator initialised with 65536 entries
-[   63.378474] Serial: AMBA PL011 UART driver
-[   63.379910] ramoops: dmesg-0	0x20000@0x0000000000110000
-[   63.380404] ramoops: console	0x80000@0x0000000000130000
-[   63.380896] ramoops: pmsg	0x50000@0x00000000001b0000
-[   63.381751] printk: console [ramoops-1] enabled
-[   63.382169] pstore: Registered ramoops as persistent store backend
-[   63.382735] ramoops: using 0xf0000@0x110000, ecc: 0
+[   17.106745] Console: colour dummy device 80x25
+[   17.107174] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=80000)
+[   17.108116] pid_max: default: 32768 minimum: 301
+[   17.108626] LSM: Security Framework initializing
+[   17.109096] Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[   17.109779] Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[   17.111945] rcu: Hierarchical SRCU implementation.
+[   17.113090] msi-controller@fe640000: unable to locate ITS domain
+[   17.113644] msi-controller@fe660000: unable to locate ITS domain
+[   17.114464] msi-controller@fe640000: Unable to locate ITS domain
+[   17.115017] msi-controller@fe660000: Unable to locate ITS domain
+[   17.115657] EFI services will not be available.
+[   17.116180] smp: Bringing up secondary CPUs ...
+[   17.116600] smp: Brought up 1 node, 1 CPU
+[   17.116969] SMP: Total of 1 processors activated.
+[   17.117402] CPU features: detected: Privileged Access Never
+[   17.117926] CPU features: detected: User Access Override
+[   17.118413] CPU features: detected: 32-bit EL0 Support
+[   17.118884] CPU features: detected: Common not Private translations
+[   17.119457] CPU features: detected: RAS Extension Support
+[   17.119951] CPU features: detected: Data cache clean to the PoU not required for I/D coherence
+[   17.120738] CPU features: detected: CRC32 instructions
+[   17.121208] CPU features: detected: Speculative Store Bypassing Safe (SSBS)
+[   17.121853] CPU features: detected: 32-bit EL1 Support
+[   17.122325] CPU features: detected: RCpc load-acquire (LDAPR)
+[   17.122899] CPU: All CPU(s) started at EL1
+[   17.123290] alternatives: patching kernel code
+[   17.124899] devtmpfs: initialized
+[   17.148093] Registered cp15_barrier emulation handler
+[   17.148561] Registered setend emulation handler
+[   17.149152] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6370867519511994 ns
+[   17.150049] futex hash table entries: 256 (order: 2, 16384 bytes, linear)
+[   17.150790] pinctrl core: initialized pinctrl subsystem
+[   17.151789] DMI not present or invalid.
+[   17.152417] NET: Registered protocol family 16
+[   17.153465] DMA: preallocated 256 KiB GFP_KERNEL pool for atomic allocations
+[   17.154161] DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[   17.154897] audit: initializing netlink subsys (disabled)
+[   17.156491] Registered FIQ tty driver
+[   17.157139] thermal_sys: Registered thermal governor 'fair_share'
+[   17.157144] thermal_sys: Registered thermal governor 'step_wise'
+[   17.157702] thermal_sys: Registered thermal governor 'user_space'
+[   17.158252] thermal_sys: Registered thermal governor 'power_allocator'
+[   17.158976] OF: /thermal-zones/soc-thermal/cooling-maps/map1: could not find phandle
+[   17.160292] thermal_sys: Add a cooling_device property with at least one device
+[   17.160963] thermal_sys: failed to build thermal zone soc-thermal: -2
+[   17.161563] audit: type=2000 audit(0.046:1): state=initialized audit_enabled=0 res=1
+[   17.162373] thermal thermal_zone0: power_allocator: sustainable_power will be estimated
+[   17.163199] thermal thermal_zone1: power_allocator: sustainable_power will be estimated
+[   17.164005] thermal thermal_zone2: power_allocator: sustainable_power will be estimated
+[   17.164818] thermal thermal_zone3: power_allocator: sustainable_power will be estimated
+[   17.165624] thermal thermal_zone4: power_allocator: sustainable_power will be estimated
+[   17.166433] thermal thermal_zone5: power_allocator: sustainable_power will be estimated
+[   17.167185] cpuidle: using governor menu
+[   17.167859] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[   17.168506] ASID allocator initialised with 65536 entries
+[   17.169821] Serial: AMBA PL011 UART driver
+[   17.171097] ramoops: dmesg-0	0x20000@0x0000000000110000
+[   17.171591] ramoops: console	0x80000@0x0000000000130000
+[   17.172082] ramoops: pmsg	0x50000@0x00000000001b0000
+[   17.172934] printk: console [ramoops-1] enabled
+[   17.173352] pstore: Registered ramoops as persistent store backend
+[   17.173919] ramoops: using 0xf0000@0x110000, ecc: 0
 [E]>0[rust_shyper::arch::aarch64::vgicv3] emu_isenabler_access: vm[0] does not have interrupt 288
 [E]>0[rust_shyper::arch::aarch64::vgicv3] emu_isenabler_access: vm[0] does not have interrupt 288
-[   63.504740] rockchip-gpio fd8a0000.gpio: probed /pinctrl/gpio@fd8a0000
+[   17.295921] rockchip-gpio fd8a0000.gpio: probed /pinctrl/gpio@fd8a0000
 [E]>0[rust_shyper::arch::aarch64::vgicv3] emu_isenabler_access: vm[0] does not have interrupt 288
 [E]>0[rust_shyper::arch::aarch64::vgicv3] emu_isenabler_access: vm[0] does not have interrupt 288
-[   63.507526] rockchip-gpio fec20000.gpio: probed /pinctrl/gpio@fec20000
+[   17.298708] rockchip-gpio fec20000.gpio: probed /pinctrl/gpio@fec20000
 [E]>0[rust_shyper::arch::aarch64::vgicv3] emu_isenabler_access: vm[0] does not have interrupt 288
 [E]>0[rust_shyper::arch::aarch64::vgicv3] emu_isenabler_access: vm[0] does not have interrupt 288
-[   63.510231] rockchip-gpio fec30000.gpio: probed /pinctrl/gpio@fec30000
+[   17.301412] rockchip-gpio fec30000.gpio: probed /pinctrl/gpio@fec30000
 [E]>0[rust_shyper::arch::aarch64::vgicv3] emu_isenabler_access: vm[0] does not have interrupt 288
 [E]>0[rust_shyper::arch::aarch64::vgicv3] emu_isenabler_access: vm[0] does not have interrupt 288
-[   63.513025] rockchip-gpio fec40000.gpio: probed /pinctrl/gpio@fec40000
+[   17.304205] rockchip-gpio fec40000.gpio: probed /pinctrl/gpio@fec40000
 [E]>0[rust_shyper::arch::aarch64::vgicv3] emu_isenabler_access: vm[0] does not have interrupt 288
 [E]>0[rust_shyper::arch::aarch64::vgicv3] emu_isenabler_access: vm[0] does not have interrupt 288
-[   63.515814] rockchip-gpio fec50000.gpio: probed /pinctrl/gpio@fec50000
-[   63.516498] rockchip-pinctrl pinctrl: probed pinctrl
-[   63.531958] HugeTLB registered 32.0 MiB page size, pre-allocated 4 pages
-[   63.532577] HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
-[   63.533235] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
-[   63.533850] HugeTLB registered 64.0 KiB page size, pre-allocated 0 pages
-[   63.539059] Lontium LT9211C driver installing....
-[   63.540578] fiq_debugger fiq_debugger.0: IRQ fiq not found
-[   63.541094] fiq_debugger fiq_debugger.0: IRQ wakeup not found
-[   63.541625] fiq_debugger_probe: could not install nmi irq handler
-[   63.542306] printk: console [ttyFIQ0] enabled
-[   63.542711] printk: bootconsole [uart8250] disabled
-[   63.542306] printk: console [ttyFIQ0] enabled
-[   63.542711] printk: bootconsole [uart8250] disabled
-[   63.543411] Registered fiq debugger ttyFIQ0
-[   63.544172] vcc5v0_sys: supplied by vcc12v_dcin
-[   63.544463] vcc5v0_usbdcin: supplied by vcc12v_dcin
-[   63.544766] vcc5v0_usb: supplied by vcc12v_dcin
-[   63.545053] vcc_1v1_nldo_s3: supplied by vcc5v0_sys
-[   63.545441] vcc5v0_host: supplied by vcc5v0_usb
-[   64.762541] vbus5v0_typec_pwr_en: supplied by vcc5v0_usb
-[   64.762803] vcc3v3_pcie20: supplied by vcc12v_dcin
-[   64.769261] iommu: Default domain type: Passthrough 
-[   64.777912] pps_core: LinuxPPS API ver. 1 registered
-[   64.777931] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giom[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+[   17.306994] rockchip-gpio fec50000.gpio: probed /pinctrl/gpio@fec50000
+[   17.307679] rockchip-pinctrl pinctrl: probed pinctrl
+[   17.323128] HugeTLB registered 32.0 MiB page size, pre-allocated 4 pages
+[   17.323748] HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+[   17.324407] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[   17.325023] HugeTLB registered 64.0 KiB page size, pre-allocated 0 pages
+[   17.330223] Lontium LT9211C driver installing....
+[   17.331734] fiq_debugger fiq_debugger.0: IRQ fiq not found
+[   17.332246] fiq_debugger fiq_debugger.0: IRQ wakeup not found
+[   17.332777] fiq_debugger_probe: could not install nmi irq handler
+[   17.333457] printk: console [ttyFIQ0] enabled
+[   17.333862] printk: bootconsole [uart8250] disabled
+[   17.333457] printk: console [ttyFIQ0] enabled
+[   17.333862] printk: bootconsole [uart8250] disabled
+[   17.334562] Registered fiq debugger ttyFIQ0
+[   17.335320] vcc5v0_sys: supplied by vcc12v_dcin
+[   17.335611] vcc5v0_usbdcin: supplied by vcc12v_dcin
+[   17.335914] vcc5v0_usb: supplied by vcc12v_dcin
+[   17.336201] vcc_1v1_nldo_s3: supplied by vcc5v0_sys
+[   17.336587] vcc5v0_host: supplied by vcc5v0_usb
+[   18.553713] vbus5v0_typec_pwr_en: supplied by vcc5v0_usb
+[   18.553974] vcc3v3_pcie20: supplied by vcc12v_dcin
+[   18.560434] iommu: Default domain type: Passthrough 
+[   18.569088] pps_core: LinuxPPS API ver. 1 registered
+[   18.569108] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giom[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 etti <giometti@linux.it>
-[   64.777996] PTP clock support registere[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+[   18.569172] PTP clock support registere[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 d
-[   64.778722] arm-scmi firmware:scmi: SCMI Notifications - Core Enabled.
-[   64.785287] arm-scmi firmware:scmi: SCMI Protocol v2.0 'rockchip:' Firmware version 0x0
-[   64.790044] rockchip-cpuinfo cpuinfo: SoC		: 35880000
-[   64.790058] rockchip-cpuinfo cpuinfo: Serial		: b73c87b3a2752318
-[   64.790728] clocksource: Switched to clocksource arch_sys_counter
-[   64.893682] NET: Registered protocol family 2
-[   64.893852] IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
-[   64.895458] tcp_listen_portaddr_hash hash table entries: 1024 (order: 3, 40960 bytes, linear)
-[   64.895501] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
-[   64.895605] TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
-[   64.895886] TCP: Hash tables configured (established 16384 bind 16384)
-[   64.896016] UDP hash table entries: 1024 (order: 4, 98304 bytes, linear)
-[   64.896080] UDP-Lite hash table entries: 1024 (order: 4, 98304 bytes, linear)
-[   64.896271] NET: Registered protocol family 1
-[   64.896794] RPC: Registered named UNIX socket transport module.
-[   64.896805] RPC: Registered udp transport module.
-[   64.896813] RPC: Registered tcp transport module.
-[   64.896820] RPC: Registered tcp NFSv4.1 backchannel transport module.
-[   64.897869] PCI: CLS 0 bytes, default 64
-[   64.899234] rockchip-thermal fec00000.tsadc: Missing rockchip,grf property
-[   64.899499] rockchip-thermal fec00000.tsadc: failed to register sensor 0: -517
-[   64.899511] rockchip-thermal fec00000.tsadc: failed to register sensor[0] : error = -517
-[   64.900454] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available
-[   64.901868] kvm [1]: HYP mode not available
-[   64.905350] Initialise system trusted keyrings
-[   64.905509] workingset: timestamp_bits=46 max_order=19 bucket_order=0
-[   64.912181] squashfs: version 4.0 (2009/01/31) Phillip Lougher
-[   64.912444] Installing knfsd (copyright (C) 1996 okir@monad.swb.de).
-[   64.913727] Key type cifs.spnego registered
-[   64.913754] Key type cifs.idmap registered
-[   64.913768] ntfs: driver 2.1.32 [Flags: R/O].
-[   64.913919] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
-[   64.914183] fuse: init (API version 7.32)
-[   64.951047] NET: Registered protocol family 38
-[   64.951062] Key type asymmetric registered
-[   64.951071] Asymmetric key parser 'x509' registered
-[   64.951103] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
-[   64.951263] io scheduler mq-deadline registered
-[   64.951278] io scheduler kyber registered
-[   64.958302] rockchip-hdptx-phy-hdmi fed60000.hdmiphy: hdptx phy init success
-[   64.959306] Firefly gpio driver init!
-[   64.959644] Firefly gpio driver register return : 0 
-[   64.963073] pwm-backlight backlight: supply power not found, using dummy regulator
-[   64.963805] iep: Module initialized.
-[   64.963942] mpp_service mpp-srv: 95949accd3b4 author: Yandong Lin 2023-05-09 video: rockchip: mpp: fix some issue for ccu flow
-[   64.963954] mpp_service mpp-srv: probe start
-[   64.964178] rk-pcie fe190000.pcie: invalid prsnt-gpios property in node
-[   64.964919] rk-pcie fe190000.pcie: IRQ msi not found
-[   64.964931] rk-pcie fe190000.pcie: use outband MSI support
-[   64.964941] rk-pcie fe190000.pcie: Missing *config* reg space
-[   64.964958] rk-pcie fe190000.pcie: host bridge /pcie@fe190000 ranges:
-[   64.964984] rk-pcie fe190000.pcie:      err 0x00f4000000..0x00f40fffff -> 0x00f4000000
-[   64.965003] rk-pcie fe190000.pcie:       IO 0x00f4100000..0x00f41fffff -> 0x00f4100000
-[   64.965024] rk-pcie fe190000.pcie:      MEM 0x00f4200000..0x00f4ffffff -> 0x00f4200000
-[   64.965039] rk-pcie fe190000.pcie:      MEM 0x0a00000000..0x0a3fffffff -> 0x0a00000000
-[   64.965069] rk-pcie fe190000.pcie: Missing *config* reg space
-[   64.965114] rk-pcie fe190000.pcie: invalid resource
-[   64.968288] mpp_vdpu2 fdb50400.vdpu: Adding to iommu group 1
-[   64.968315] iommu: Failed to allocate default IOMMU domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
-[   64.968664] mpp_vdpu2 fdb50400.vdpu: probe device
-[   64.968959] mpp_vdpu2 fdb50400.vdpu: reset_group->rw_sem_on=0
-[   64.968979] mpp_vdpu2 fdb50400.vdpu: reset_group->rw_sem_on=0
-[   64.969199] mpp_vdpu2 fdb50400.vdpu: probing finish
-[   64.969763] mpp_vepu2 jpege-ccu: probing start
-[   64.969777] mpp_vepu2 jpege-ccu: probing finish
-[   64.970122] mpp_vepu2 fdba0000.jpege-core: Adding to iommu group 5
-[   64.970147] iommu: Failed to allocate default IOMMU domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
-[   64.970323] mpp_vepu2 fdba0000.jpege-core: probing start
-[   64.970663] mpp_vepu2 fdba0000.jpege-core: attach ccu success
-[   64.970898] mpp_vepu2 fdba00[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-00.jpege-core: probing finish
-[   64.971059] mpp_vepu2 fdba4000.jpe[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-ge-core: Adding to iommu group 6
-[   64.971100] iommu: Failed to al[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-locate default IOMMU domain of type 4 for group (null) - Falling back[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- to IOMMU_DOMAIN_DMA
-[   64.971175] mpp_vepu2 fdba4000.jpege-core: [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-probing start
-[   64.971426] mpp_vepu2 fdba4000.jpege-core: attach [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-ccu success
-[   64.971697] mpp_vepu2 fdba4000.jpege-core: probing f[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-inish
-[   64.971870] mpp_vepu2 fdba8000.jpege-core: Adding to iommu[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- group 7
-[   64.971894] iommu: Failed to allocate default IOMMU doma[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-in of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
-[ [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-  64.972053] mpp_vepu2 fdba8000.jpege-core: probing start
-[   64.97[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-2304] mpp_vepu2 fdba8000.jpege-core: attach ccu success
-[   64.9725[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-71] mpp_vepu2 fdba8000.jpege-core: probing finish
-[   64.972745] mp[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-p_vepu2 fdbac000.jpege-core: Adding to iommu group 8
-[   64.972770][D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- iommu: Failed to allocate default IOMMU domain of type 4 for group [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-(null) - Falling back to IOMMU_DOMAIN_DMA
-[   64.972923] mpp_vepu2 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-fdbac000.jpege-core: probing start
-[   64.973187] mpp_vepu2 fdbac00[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-0.jpege-core: attach ccu success
-[   64.973457] mpp_vepu2 fdbac000.[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-jpege-core: probing finish
-[   64.974051] mpp-iep2 fdbb0000.iep: Ad[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-ding to iommu group 9
-[   64.974097] iommu: Failed to allocate defa[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-ult IOMMU domain of type 4 for group (null) - Falling back to IOMMU_[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-DOMAIN_DMA
-[   64.974260] mpp-iep2 fdbb0000.iep: probe device
-[   [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-64.974539] mpp-iep2 fdbb0000.iep: allocate roi buffer failed
-[   64[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-.974777] mpp-iep2 fdbb0000.iep: probing finish
-[   64.975213] mpp_j[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-pgdec fdb90000.jpegd: Adding to iommu group 4
-[   64.975238] iommu:[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- Failed to allocate default IOMMU domain of type 4 for group (null) [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-- Falling back to IOMMU_DOMAIN_DMA
-[   64.975506] mpp_jpgdec fdb900[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-00.jpegd: probe device
-[   64.975980] mpp_jpgdec fdb90000.jpegd: pr[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-obing finish
-[   64.976804] mpp_rkvdec2 fdc30000.rkvdec-ccu: rkvdec[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
--ccu, probing start
-[   64.976940] mpp_rkvdec2 fdc30000.rkvdec-ccu:[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- ccu-mode: 1
-[   64.976951] mpp_rkvdec2 fdc30000.rkvdec-ccu: probin[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-g finish
-[   64.977101] mpp_rkvdec2 fdc38100.rkvdec-core: Adding to[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- iommu group 12
-[   64.977125] iommu: Failed to allocate default IO[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-MMU domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-_DMA
-[   64.977489] mpp_rkvdec2 fdc38100.rkvdec-core: rkvdec-core, [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-probing start
-[   64.977767] mpp_rkvdec2 fdc38100.rkvdec-core: shar[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-ed_niu_a is not found!
-[   64.977778] rkvdec2_init:1022: No niu acl[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-k reset resource define
-[   64.977789] mpp_rkvdec2 fdc38100.rkvdec-[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-core: shared_niu_h is not found!
-[   64.977797] rkvdec2_init:1025: [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-No niu hclk reset resource define
-[   64.977839] mpp_rkvdec2 fdc381[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-00.rkvdec-core: no regulator, devfreq is disabled
-[   64.977956] mpp_[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-rkvdec2 fdc38100.rkvdec-core: core_mask=00010001
-[   64.977966] mpp[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-_rkvdec2 fdc38100.rkvdec-core: attach ccu as core 0
-[   64.978235] [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-mpp_rkvdec2 fdc38100.rkvdec-core: sram_start 0x00000000ff001000
-[  [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- 64.978247] mpp_rkvdec2 fdc38100.rkvdec-core: rcb_iova 0x00000000fff[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-00000
-[   64.978255] mpp_rkvdec2 fdc38100.rkvdec-core: sram_size 49[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-1520
-[   64.978264] mpp_rkvdec2 fdc38100.rkvdec-core: rcb_size 1048[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-576
-[   64.978275] mpp_rkvdec2 fdc38100.rkvdec-core: min_width 512[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+[   18.569900] arm-scmi firmware:scmi: SCMI Notifications - Core Enabled.
+[   18.576457] arm-scmi firmware:scmi: SCMI Protocol v2.0 'rockchip:' Firmware version 0x0
+[   18.581212] rockchip-cpuinfo cpuinfo: SoC		: 35880000
+[   18.581226] rockchip-cpuinfo cpuinfo: Serial		: b73c87b3a2752318
+[   18.581894] clocksource: Switched to clocksource arch_sys_counter
+[   18.684836] NET: Registered protocol family 2
+[   18.685005] IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[   18.686612] tcp_listen_portaddr_hash hash table entries: 1024 (order: 3, 40960 bytes, linear)
+[   18.686655] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[   18.686760] TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
+[   18.687040] TCP: Hash tables configured (established 16384 bind 16384)
+[   18.687169] UDP hash table entries: 1024 (order: 4, 98304 bytes, linear)
+[   18.687233] UDP-Lite hash table entries: 1024 (order: 4, 98304 bytes, linear)
+[   18.687423] NET: Registered protocol family 1
+[   18.687947] RPC: Registered named UNIX socket transport module.
+[   18.687958] RPC: Registered udp transport module.
+[   18.687966] RPC: Registered tcp transport module.
+[   18.687973] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[   18.689022] PCI: CLS 0 bytes, default 64
+[   18.690385] rockchip-thermal fec00000.tsadc: Missing rockchip,grf property
+[   18.690651] rockchip-thermal fec00000.tsadc: failed to register sensor 0: -517
+[   18.690662] rockchip-thermal fec00000.tsadc: failed to register sensor[0] : error = -517
+[   18.691602] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available
+[   18.693013] kvm [1]: HYP mode not available
+[   18.696492] Initialise system trusted keyrings
+[   18.696646] workingset: timestamp_bits=46 max_order=19 bucket_order=0
+[   18.703328] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[   18.703590] Installing knfsd (copyright (C) 1996 okir@monad.swb.de).
+[   18.704873] Key type cifs.spnego registered
+[   18.704900] Key type cifs.idmap registered
+[   18.704914] ntfs: driver 2.1.32 [Flags: R/O].
+[   18.705065] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[   18.705328] fuse: init (API version 7.32)
+[   18.743230] NET: Registered protocol family 38
+[   18.743244] Key type asymmetric registered
+[   18.743253] Asymmetric key parser 'x509' registered
+[   18.743286] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
+[   18.743447] io scheduler mq-deadline registered
+[   18.743462] io scheduler kyber registered
+[   18.750522] rockchip-hdptx-phy-hdmi fed60000.hdmiphy: hdptx phy init success
+[   18.751529] Firefly gpio driver init!
+[   18.751866] Firefly gpio driver register return : 0 
+[   18.755336] pwm-backlight backlight: supply power not found, using dummy regulator
+[   18.756063] iep: Module initialized.
+[   18.756202] mpp_service mpp-srv: 95949accd3b4 author: Yandong Lin 2023-05-09 video: rockchip: mpp: fix some issue for ccu flow
+[   18.756213] mpp_service mpp-srv: probe start
+[   18.756414] rk-pcie fe190000.pcie: invalid prsnt-gpios property in node
+[   18.757151] rk-pcie fe190000.pcie: IRQ msi not found
+[   18.757163] rk-pcie fe190000.pcie: use outband MSI support
+[   18.757173] rk-pcie fe190000.pcie: Missing *config* reg space
+[   18.757190] rk-pcie fe190000.pcie: host bridge /pcie@fe190000 ranges:
+[   18.757216] rk-pcie fe190000.pcie:      err 0x00f4000000..0x00f40fffff -> 0x00f4000000
+[   18.757235] rk-pcie fe190000.pcie:       IO 0x00f4100000..0x00f41fffff -> 0x00f4100000
+[   18.757256] rk-pcie fe190000.pcie:      MEM 0x00f4200000..0x00f4ffffff -> 0x00f4200000
+[   18.757270] rk-pcie fe190000.pcie:      MEM 0x0a00000000..0x0a3fffffff -> 0x0a00000000
+[   18.757301] rk-pcie fe190000.pcie: Missing *config* reg space
+[   18.757346] rk-pcie fe190000.pcie: invalid resource
+[   18.760340] mpp_vdpu2 fdb50400.vdpu: Adding to iommu group 1
+[   18.760369] iommu: Failed to allocate default IOMMU domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
+[   18.760737] mpp_vdpu2 fdb50400.vdpu: probe device
+[   18.761064] mpp_vdpu2 fdb50400.vdpu: reset_group->rw_sem_on=0
+[   18.761084] mpp_vdpu2 fdb50400.vdpu: reset_group->rw_sem_on=0
+[   18.761302] mpp_vdpu2 fdb50400.vdpu: probing finish
+[   18.761837] mpp_vepu2 jpege-ccu: probing start
+[   18.761851] mpp_vepu2 jpege-ccu: probing finish
+[   18.762258] mpp_vepu2 fdba0000.jpege-core: Adding to iommu group 5
+[   18.762283] iommu: Failed to allocate default IOMMU domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
+[   18.762461] mpp_vepu2 fdba0000.jpege-core: probing start
+[   18.762799] mpp_vepu2 fdba0000.jpege-core: attach ccu success
+[   18.762977] mpp_vepu2 fdba0000.jpe[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ge-core: probing finish
+[   18.763136] mpp_vepu2 fdba4000.jpege-cor[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+e: Adding to iommu group 6
+[   18.763160] iommu: Failed to allocate[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ default IOMMU domain of type 4 for group (null) - Falling back to IO[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+MMU_DOMAIN_DMA
+[   18.763235] mpp_vepu2 fdba4000.jpege-core: probin[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+g start
+[   18.763484] mpp_vepu2 fdba4000.jpege-core: attach ccu su[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ccess
+[   18.763769] mpp_vepu2 fdba4000.jpege-core: probing finish[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 
-[   64.978287] mpp_rkvdec2 fdc38100.rkvdec-core: rcb_info_count 20
+[   18.763924] mpp_vepu2 fdba8000.jpege-core: Adding to iommu group[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ 7
+[   18.763949] iommu: Failed to allocate default IOMMU domain of[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
+[   18.76[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+4108] mpp_vepu2 fdba8000.jpege-core: probing start
+[   18.764359] m[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+pp_vepu2 fdba8000.jpege-core: attach ccu success
+[   18.764644] mpp[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+_vepu2 fdba8000.jpege-core: probing finish
+[   18.764801] mpp_vepu2[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ fdbac000.jpege-core: Adding to iommu group 8
+[   18.764825] iommu:[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ Failed to allocate default IOMMU domain of type 4 for group (null) -[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ Falling back to IOMMU_DOMAIN_DMA
+[   18.764977] mpp_vepu2 fdbac000[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+.jpege-core: probing start
+[   18.765268] mpp_vepu2 fdbac000.jpege-[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+core: attach ccu success
+[   18.765539] mpp_vepu2 fdbac000.jpege-co[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+re: probing finish
+[   18.766125] mpp-iep2 fdbb0000.iep: Adding to i[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ommu group 9
+[   18.766151] iommu: Failed to allocate default IOMMU[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DM[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+A
+[   18.766314] mpp-iep2 fdbb0000.iep: probe device
+[   18.766593[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+] mpp-iep2 fdbb0000.iep: allocate roi buffer failed
+[   18.766831] [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+mpp-iep2 fdbb0000.iep: probing finish
+[   18.767265] mpp_jpgdec fdb[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+90000.jpegd: Adding to iommu group 4
+[   18.767290] iommu: Failed t[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+o allocate default IOMMU domain of type 4 for group (null) - Falling[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ back to IOMMU_DOMAIN_DMA
+[   18.767557] mpp_jpgdec fdb90000.jpegd:[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ probe device
+[   18.768033] mpp_jpgdec fdb90000.jpegd: probing fin[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ish
+[   18.768880] mpp_rkvdec2 fdc30000.rkvdec-ccu: rkvdec-ccu, pro[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+bing start
+[   18.769015] mpp_rkvdec2 fdc30000.rkvdec-ccu: ccu-mode[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+: 1
+[   18.769026] mpp_rkvdec2 fdc30000.rkvdec-ccu: probing finish[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+
+[   18.769176] mpp_rkvdec2 fdc38100.rkvdec-core: Adding to iommu gr[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+oup 12
+[   18.769200] iommu: Failed to allocate default IOMMU domai[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+n of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
+[  [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ 18.769536] mpp_rkvdec2 fdc38100.rkvdec-core: rkvdec-core, probing s[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+tart
+[   18.769812] mpp_rkvdec2 fdc38100.rkvdec-core: shared_niu_a [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+is not found!
+[   18.769823] rkvdec2_init:1022: No niu aclk reset re[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+source define
+[   18.769834] mpp_rkvdec2 fdc38100.rkvdec-core: shar[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ed_niu_h is not found!
+[   18.769842] rkvdec2_init:1025: No niu hcl[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+k reset resource define
+[   18.769885] mpp_rkvdec2 fdc38100.rkvdec-[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+core: no regulator, devfreq is disabled
+[   18.770001] mpp_rkvdec2 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+fdc38100.rkvdec-core: core_mask=00010001
+[   18.770012] mpp_rkvdec2[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ fdc38100.rkvdec-core: attach ccu as core 0
+[   18.770283] mpp_rkvd[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ec2 fdc38100.rkvdec-core: sram_start 0x00000000ff001000
+[   18.7702[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+95] mpp_rkvdec2 fdc38100.rkvdec-core: rcb_iova 0x00000000fff00000
+[[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+   18.770304] mpp_rkvdec2 fdc38100.rkvdec-core: sram_size 491520
+[  [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ 18.770313] mpp_rkvdec2 fdc38100.rkvdec-core: rcb_size 1048576
+[   [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+18.770323] mpp_rkvdec2 fdc38100.rkvdec-core: min_width 512
+[   18.7[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+70335] mpp_rkvdec2 fdc38100.rkvdec-core: rcb_info_count 20
+[   18.77[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+0344] mpp_rkvdec2 fdc38100.rkvdec-core: [136, 24576]
+[   18.770353][D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ mpp_rkvdec2 fdc38100.rkvdec-core: [137, 49152]
+[   18.770362] mpp_[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+rkvdec2 fdc38100.rkvdec-core: [141, 90112]
+[   18.770370] mpp_rkvde[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+c2 fdc38100.rkvdec-core: [140, 49152]
+[   18.770378] mpp_rkvdec2 fd[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+c38100.rkvdec-core: [139, 180224]
+[   18.770387] mpp_rkvdec2 fdc381[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+00.rkvdec-core: [133, 49152]
+[   18.770395] mpp_rkvdec2 fdc38100.rk[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+vdec-core: [134, 8192]
+[   18.770404] mpp_rkvdec2 fdc38100.rkvdec-c[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ore: [135, 4352]
+[   18.770412] mpp_rkvdec2 fdc38100.rkvdec-core: [[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+138, 13056]
+[   18.770421] mpp_rkvdec2 fdc38100.rkvdec-core: [142, [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+291584]
+[   18.770510] mpp_rkvdec2 fdc38100.rkvdec-core: probing fi[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+nish
+[   18.770646] mpp_rkvdec2 fdc48100.rkvdec-core: Adding to iom[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+mu group 13
+[   18.770669] iommu: Failed to allocate default IOMMU d[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+omain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+
+[   18.771025] mpp_rkvdec2 fdc48100.rkvdec-core: rkvdec-core, probi[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ng start
+[   18.771300] mpp_rkvdec2 fdc48100.rkvdec-core: shared_niu_a is not found!
+[   18.771311] rkvdec2_init:1022: No niu aclk rese[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+t resource define
+[   18.771323] mpp_rkvdec2 fdc48100.rkvdec-core: shared_niu_h is not found!
+[   18.771330] rkvdec2_init:1025: No niu[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ hclk reset resource define
+[   18.771376] mpp_rkvdec2 fdc48100.rkvdec-core: no regulator, devfreq is disabled
+[   18.771470] mpp_rkvd[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ec2 fdc48100.rkvdec-core: core_mask=00020002
+[   18.771497] mpp_rkvdec2 fdc48100.rkvdec-core: attach ccu as core 1
+[   18.771822] mpp_[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+rkvdec2 fdc48100.rkvdec-core: sram_start 0x00000000ff079000
+[   18.771833] mpp_rkvdec2 fdc48100.rkvdec-core: rcb_iova 0x00000000ffe0000[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+0
+[   18.771842] mpp_rkvdec2 fdc48100.rkvdec-core: sram_size 487424
+[   18.771851] mpp_rkvdec2 fdc48100.rkvdec-core: rcb_size 1048576[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+
+[   18.771861] mpp_rkvdec2 fdc48100.rkvdec-core: min_width 512
+[   18.771874] mpp_rkvdec2 fdc48100.rkvdec-core: rcb_info_count 20
+[  [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ 18.771886] mpp_rkvdec2 fdc48100.rkvdec-core: [136, 24576]
+[   18.771916] mpp_rkvdec2 fdc48100.rkvdec-core: [137, 49152]
+[   18.771925[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+] mpp_rkvdec2 fdc48100.rkvdec-core: [141, 90112]
+[   18.771934] mpp_rkvdec2 fdc48100.rkvdec-core: [140, 49152]
+[   18.771942] mpp_rkvde[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+c2 fdc48100.rkvdec-core: [139, 180224]
+[   18.771951] mpp_rkvdec2 fdc48100.rkvdec-core: [133, 49152]
+[   18.771959] mpp_rkvdec2 fdc481[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+00.rkvdec-core: [134, 8192]
+[   18.771968] mpp_rkvdec2 fdc48100.rkvdec-core: [135, 4352]
+[   18.771976] mpp_rkvdec2 fdc48100.rkvdec-co[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+re: [138, 13056]
+[   18.771985] mpp_rkvdec2 fdc48100.rkvdec-core: [142, 291584]
+[   18.772129] mpp_rkvdec2 fdc48100.rkvdec-core: probi[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ng finish
+[   18.772740] mpp_rkvenc2 rkvenc-ccu: probing start
+[   18.772796] mpp_rkvenc2 rkvenc-ccu: probing finish
+[   18.773150] m[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+pp_rkvenc2 fdbd0000.rkvenc-core: Adding to iommu group 10
+[   18.773174] iommu: Failed to allocate default IOMMU domain of type 4 for g[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+roup (null) - Falling back to IOMMU_DOMAIN_DMA
+[   18.773462] mpp_rkvenc2 fdbd0000.rkvenc-core: probing start
+[   18.773888] mpp_rkven[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+c2 fdbd0000.rkvenc-core: dev_pm_opp_set_regulators: no regulator (venc) found: -19
+[   18.773923] rkvenc_init:1814: failed to add venc d[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+evfreq
+[   18.773989] mpp_rkvenc2 fdbd0000.rkvenc-core: attach ccu as core 0
+[   18.774201] mpp_rkvenc2 fdbd0000.rkvenc-core: probing [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+finish
+[   18.774441] mpp_rkvenc2 fdbe0000.rkvenc-core: Adding to iommu group 11
+[   18.774464] iommu: Failed to allocate default IOMM[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+U domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
+[   18.774754] mpp_rkvenc2 fdbe0000.rkvenc-core: probing start
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-[   64.978296] mpp_rkvdec2 fdc38100.rkvdec-core: [136, 24576]
-[   6[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-4.978304] mpp_rkvdec2 fdc38100.rkvdec-core: [137, 49152]
-[   64.978[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-313] mpp_rkvdec2 fdc38100.rkvdec-core: [141, 90112]
-[   64.978322] [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-mpp_rkvdec2 fdc38100.rkvdec-core: [140, 49152]
-[   64.978330] mpp_r[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-kvdec2 fdc38100.rkvdec-core: [139, 180224]
-[   64.978339] mpp_rkvde[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-c2 fdc38100.rkvdec-core: [133, 49152]
-[   64.978347] mpp_rkvdec2 fdc[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-38100.rkvdec-core: [134, 8192]
-[   64.978355] mpp_rkvdec2 fdc38100.[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-rkvdec-core: [135, 4352]
-[   64.978364] mpp_rkvdec2 fdc38100.rkvdec-[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-core: [138, 13056]
-[   64.978372] mpp_rkvdec2 fdc38100.rkvdec-core:[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- [142, 291584]
-[   64.978462] mpp_rkvdec2 fdc38100.rkvdec-core: pro[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-bing finish
-[   64.978599] mpp_rkvdec2 fdc48100.rkvdec-core: Adding[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- to iommu group 13
-[   64.978622] iommu: Failed to allocate default[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- IOMMU domain of type 4 for group (null) - Falling back to IOMMU_DOM[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-AIN_DMA
-[   64.978975] mpp_rkvdec2 fdc48100.rkvdec-core: rkvdec-cor[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-e, probing start
-[   64.979251] mpp_rkvdec2 fdc48100.rkvdec-core: shared_niu_a is not found!
-[   64.979262] rkvdec2_init:1022: No niu a[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-clk reset resource define
-[   64.979274] mpp_rkvdec2 fdc48100.rkvdec-core: shared_niu_h is not found!
-[   64.979281] rkvdec2_init:1025[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-: No niu hclk reset resource define
-[   64.979327] mpp_rkvdec2 fdc48100.rkvdec-core: no regulator, devfreq is disabled
-[   64.979421] [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-mpp_rkvdec2 fdc48100.rkvdec-core: core_mask=00020002
-[   64.979449] mpp_rkvdec2 fdc48100.rkvdec-core: attach ccu as core 1
-[   64.9797[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-74] mpp_rkvdec2 fdc48100.rkvdec-core: sram_start 0x00000000ff079000
-[   64.979786] mpp_rkvdec2 fdc48100.rkvdec-core: rcb_iova 0x0000000[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-0ffe00000
-[   64.979794] mpp_rkvdec2 fdc48100.rkvdec-core: sram_size 487424
-[   64.979803] mpp_rkvdec2 fdc48100.rkvdec-core: rcb_size [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-1048576
-[   64.979814] mpp_rkvdec2 fdc48100.rkvdec-core: min_width 512
-[   64.979826] mpp_rkvdec2 fdc48100.rkvdec-core: rcb_info_count[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- 20
-[   64.979835] mpp_rkvdec2 fdc48100.rkvdec-core: [136, 24576]
-[   64.979843] mpp_rkvdec2 fdc48100.rkvdec-core: [137, 49152]
-[   6[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-4.979852] mpp_rkvdec2 fdc48100.rkvdec-core: [141, 90112]
-[   64.979860] mpp_rkvdec2 fdc48100.rkvdec-core: [140, 49152]
-[   64.979869] m[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-pp_rkvdec2 fdc48100.rkvdec-core: [139, 180224]
-[   64.979877] mpp_rkvdec2 fdc48100.rkvdec-core: [133, 49152]
-[   64.979885] mpp_rkvdec[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-2 fdc48100.rkvdec-core: [134, 8192]
-[   64.979894] mpp_rkvdec2 fdc48100.rkvdec-core: [135, 4352]
-[   64.979902] mpp_rkvdec2 fdc48100.r[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-kvdec-core: [138, 13056]
-[   64.979911] mpp_rkvdec2 fdc48100.rkvdec-core: [142, 291584]
-[   64.979996] mpp_rkvdec2 fdc48100.rkvdec-cor[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-e: probing finish
-[   64.980519] mpp_rkvenc2 rkvenc-ccu: probing start
-[   64.980532] mpp_rkvenc2 rkvenc-ccu: probing finish
-[   64.9[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-80929] mpp_rkvenc2 fdbd0000.rkvenc-core: Adding to iommu group 10
-[   64.980953] iommu: Failed to allocate default IOMMU domain of type[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
-[   64.981242] mpp_rkvenc2 fdbd0000.rkvenc-core: probing start
-[   64.981668] m[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-pp_rkvenc2 fdbd0000.rkvenc-core: dev_pm_opp_set_regulators: no regulator (venc) found: -19
-[   64.981703] rkvenc_init:1814: failed to ad[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-d venc devfreq
-[   64.981769] mpp_rkvenc2 fdbd0000.rkvenc-core: attach ccu as core 0
-[   64.981979] mpp_rkvenc2 fdbd0000.rkvenc-core: [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-probing finish
-[   64.982218] mpp_rkvenc2 fdbe0000.rkvenc-core: Adding to iommu group 11
-[   64.982242] iommu: Failed to allocate defa[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-ult IOMMU domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
-[   64.982528] mpp_rkvenc2 fdbe0000.rkvenc-core: probing[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- start
-[   64.982877] mpp_rkvenc2 fdbe0000.rkvenc-core: dev_pm_opp_set_regulators: no regulator (venc) found: -19
-[   64.982947] rkvenc_init:1814: failed to add venc devfreq
-[   64.983038] mpp_rkvenc2 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-fdbe0000.rkvenc-core: attach ccu as core 1
-[   64.983248] mpp_rkvenc[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-2 fdbe0000.rkvenc-core: probing finish
-[   64.984480] mpp_av1dec: Ad[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-ding child /av1d@fdc70000
-[   64.984655] mpp_av1dec: register device[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
- av1d-master
-[   64.984716] mpp_av1dec av1d-master: av1_iommu_of_xla[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-te,784
-[   64.984770] av1_iommu_probe_device,736, consumer : av1d-ma[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-ster, supplier : fdca0000.iommu
-[   64.984859] mpp_av1dec av1d-master: Adding to iommu group 18
-[   64.984883] iommu: Failed to allocate default IOMMU domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
-[   64.985162] mpp_av1dec av1d-master: probing start
-[   64.985661] mpp_av1dec av1d-master: probing finish
-[   64.985765] mpp_service mpp-srv: probe success
-[   64.986126] Lontium LT9211C driver installing....
-[   64.986139] Error: Driver 'LT9211C' is already registered, aborting...
-[   65.129249] dma-pl330 fea10000.dma-controller: Loaded driver for PL330 DMAC-241330
-[   65.129277] dma-pl330 fea10000.dma-controller: 	DBUFF-128x8bytes Num_Chans-8 Num_Peri-32 Num_Events-16
-[   65.132123] dma-pl330 fea30000.dma-controller: Loaded driver for PL330 DMAC-241330
-[   65.132150] dma-pl330 fea30000.dma-controller: 	DBUFF-128x8bytes Num_Chans-8 Num_Peri-32 Num_Events-16
-[   65.134945] dma-pl330 fed10000.dma-controller: Loaded driver for PL330 DMAC-241330
-[   65.134973] dma-pl330 fed10000.dma-controller: 	DBUFF-128x8bytes Num_Chans-8 Num_Peri-32 Num_Events-16
-[   65.136818] rockchip-pvtm fda40000.pvtm: pvtm@0 probed
-[   65.137007] rockchip-pvtm fda50000.pvtm: pvtm@1 probed
-[   65.137187] rockchip-pvtm fda60000.pvtm: pvtm@2 probed
-[   65.137387] rockchip-pvtm fdaf0000.pvtm: pvtm@3 probed
-[   65.137596][I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026540032 is reset
- rockchip-pvtm fdb30000.pvtm: pvtm@4 probed
-[   65.138971] rockchip-[I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026535936 is reset
-system-monitor rockchip-system-monitor: system monitor probe
+[   18.775104] mpp_rkvenc2 fdbe0000.rkvenc-core: dev_pm_opp_set_regulators: no regulator (venc) found: -19
+[   18.775172] rkvenc_init:1814: failed to add venc devfreq
+[   18.775301] mpp_rkvenc2 fdbe0000[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+.rkvenc-core: attach ccu as core 1
+[   18.775508] mpp_rkvenc2 fdbe00[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+00.rkvenc-core: probing finish
+[   18.776704] mpp_av1dec: Adding chi[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ld /av1d@fdc70000
+[   18.776879] mpp_av1dec: register device av1d-ma[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ster
+[   18.776942] mpp_av1dec av1d-master: av1_iommu_of_xlate,784
+[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+[   18.776995] av1_iommu_probe_device,736, consumer : av1d-master, su[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+pplier : fdca0000.iommu
+[   18.777084] mpp_av1dec av1d-master: Adding to iommu group 18
+[   18.777109] iommu: Failed to allocate default IOMMU domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
+[   18.777390] mpp_av1dec av1d-master: probing start
+[   18.777879] mpp_av1dec av1d-master: probing finish
+[   18.777982] mpp_service mpp-srv: probe success
+[   18.778344] Lontium LT9211C driver installing....
+[   18.778358] Error: Driver 'LT9211C' is already registered, aborting...
+[   18.921506] dma-pl330 fea10000.dma-controller: Loaded driver for PL330 DMAC-241330
+[   18.921536] dma-pl330 fea10000.dma-controller: 	DBUFF-128x8bytes Num_Chans-8 Num_Peri-32 Num_Events-16
+[   18.924379] dma-pl330 fea30000.dma-controller: Loaded driver for PL330 DMAC-241330
+[   18.924406] dma-pl330 fea30000.dma-controller: 	DBUFF-128x8bytes Num_Chans-8 Num_Peri-32 Num_Events-16
+[   18.927194] dma-pl330 fed10000.dma-controller: Loaded driver for PL330 DMAC-241330
+[   18.927221] dma-pl330 fed10000.dma-controller: 	DBUFF-128x8bytes Num_Chans-8 Num_Peri-32 Num_Events-16
+[   18.929080] rockchip-pvtm fda40000.pvtm: pvtm@0 probed
+[   18.929270] rockchip-pvtm fda50000.pvtm: pvtm@1 probed
+[   18.929449] rockchip-pvtm fda60000.pvtm: pvtm@2 probed
+[   18.929645] rockchip-pvtm fdaf0000.pvtm: pvtm@3 probed
+[   18.929835] [I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026540032 is reset
+rockchip-pvtm fdb30000.pvtm: pvtm@4 probed
+[   18.931210] rockchip-s[I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026535936 is reset
+ystem-monitor rockchip-system-monitor: system monitor probe
 [I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026531840 is reset
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
@@ -699,9 +827,7 @@ system-monitor rockchip-system-monitor: system monitor probe
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-[   65.172456] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
-[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+[   18.963896] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
@@ -723,303 +849,307 @@ system-monitor rockchip-system-monitor: system monitor probe
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-[   65.191122] Serial: 8250/16550 driver, 10 ports, IRQ sharing disabled
-[   65.192301] feba0000.serial: ttyS7 at MMIO 0xfeba0000 (irq = 109, base_baud = 1500000) is a 16550A
+[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+[   18.983365] Serial: 8250/16550 driver, 10 ports, IRQ sharing disabled
+[   18.984546] feba0000.serial: ttyS7 at MMIO 0xfeba0000 (irq = 109, base_baud = 1500000) is a 16550A
 [I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026540032 queue 0 ready
 [I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026540032 queue 1 ready
 [I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026540032 init ok
-[   65.197429] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
+[   18.988790] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
 [I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026535936 queue 0 ready
 [I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026535936 queue 1 ready
 [I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026535936 init ok
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-[   65.210632] brd: module loaded
-[   65.216380] loop: module loaded
-[   65.217033] zram: Added device: zram0
-[   65.217466] lkdtm: No crash points registered, enable through debugfs
-[   65.221034] rockchip-spi feb10000.spi: no high_speed pinctrl state
-[   65.221412] rockchip-spi feb10000.spi: probed, poll=0, rsd=0
-[   65.222143] rockchip-spi feb20000.spi: no high_speed pinctrl state
-[   65.224128] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
-[   65.224672] rk806 spi2.0: chip id: RK806,ver:0x2, 0x1
-[   65.224941] rk806 spi2.0: ON: 0x40 OFF:0x0
-[   65.228192] vdd_gpu_s0: supplied by vcc5v0_sys
-[   65.230096] vdd_cpu_lit_s0: supplied by vcc5v0_sys
-[   65.231652] vdd_log_s0: supplied by vcc5v0_sys
-[   65.233175] vdd_vdenc_s0: supplied by vcc5v0_sys
-[   65.234859] vdd_ddr_s0: supplied by vcc5v0_sys
-[   65.235914] vdd2_ddr_s3: supplied by vcc5v0_sys
-[   65.237459] vdd_2v0_pldo_s3: supplied by vcc5v0_sys
-[   65.238860] vcc_3v3_s3: supplied by vcc5v0_sys
-[   65.240205] vddq_ddr_s0: supplied by vcc5v0_sys
-[   65.241741] vcc_1v8_s3: supplied by vcc5v0_sys
-[   65.243168] vdd_0v75_s3: supplied by vcc_1v1_nldo_s3
-[   65.244700] vdd_ddr_pll_s0: supplied by vcc_1v1_nldo_s3
-[   65.246100] avdd_0v75_s0: supplied by vcc_1v1_nldo_s3
-[   65.247483] vdd_0v85_s0: supplied by vcc_1v1_nldo_s3
-[   65.248806] vdd_0v75_s0: supplied by vcc_1v1_nldo_s3
-[   65.250315] avcc_1v8_s0: supplied by vdd_2v0_pldo_s3
-[   65.250756] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
-[   65.252020] vcc_1v8_s0: supplied by vdd_2v0_pldo_s3
-[   65.253534] avdd_1v2_s0: supplied by vdd_2v0_pldo_s3
-[   65.255100] vcc_3v3_s0: supplied by vcc5v0_sys
-[   65.256470] vccio_sd_s0: supplied by vcc5v0_sys
-[   65.257882] pldo6_s3: supplied by vcc5v0_sys
-[   65.259132] rk806 spi2.0: no sleep-setting state
-[   65.259157] rk806 spi2.0: no reset-setting pinctrl state
-[   65.259168] rk806 spi2.0: no dvs-setting pinctrl state
-[   65.262565] rockchip-spi feb20000.spi: probed, poll=0, rsd=0
-[   65.263735] wk2xxx_init: SPI driver for spi to Uart chip WK2XXX, etc.
-[   65.263757] wk2xxx_init: V2.4 On 2022.07.24
-[   65.263867] register firefly_spi_init spi return v = :0
-[   65.264761] wireguard: allowedips self-tests: pass
-[   65.276654] wireguard: nonce counter self-tests: pass
-[   65.278201] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
-[   65.304105] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
+[   19.002903] brd: module loaded
+[   19.008669] loop: module loaded
+[   19.009322] zram: Added device: zram0
+[   19.009729] lkdtm: No crash points registered, enable through debugfs
+[   19.013307] rockchip-spi feb10000.spi: no high_speed pinctrl state
+[   19.013686] rockchip-spi feb10000.spi: probed, poll=0, rsd=0
+[   19.014423] rockchip-spi feb20000.spi: no high_speed pinctrl state
+[   19.015263] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
+[   19.016943] rk806 spi2.0: chip id: RK806,ver:0x2, 0x1
+[   19.017239] rk806 spi2.0: ON: 0x40 OFF:0x0
+[   19.020539] vdd_gpu_s0: supplied by vcc5v0_sys
+[   19.022472] vdd_cpu_lit_s0: supplied by vcc5v0_sys
+[   19.024007] vdd_log_s0: supplied by vcc5v0_sys
+[   19.025548] vdd_vdenc_s0: supplied by vcc5v0_sys
+[   19.027224] vdd_ddr_s0: supplied by vcc5v0_sys
+[   19.028285] vdd2_ddr_s3: supplied by vcc5v0_sys
+[   19.029842] vdd_2v0_pldo_s3: supplied by vcc5v0_sys
+[   19.031243] vcc_3v3_s3: supplied by vcc5v0_sys
+[   19.032614] vddq_ddr_s0: supplied by vcc5v0_sys
+[   19.034147] vcc_1v8_s3: supplied by vcc5v0_sys
+[   19.035593] vdd_0v75_s3: supplied by vcc_1v1_nldo_s3
+[   19.037116] vdd_ddr_pll_s0: supplied by vcc_1v1_nldo_s3
+[   19.038512] avdd_0v75_s0: supplied by vcc_1v1_nldo_s3
+[   19.039867] vdd_0v85_s0: supplied by vcc_1v1_nldo_s3
+[   19.041191] vdd_0v75_s0: supplied by vcc_1v1_nldo_s3
+[   19.041934] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
+[   19.042905] avcc_1v8_s0: supplied by vdd_2v0_pldo_s3
+[   19.044478] vcc_1v8_s0: supplied by vdd_2v0_pldo_s3
+[   19.046009] avdd_1v2_s0: supplied by vdd_2v0_pldo_s3
+[   19.047570] vcc_3v3_s0: supplied by vcc5v0_sys
+[   19.048959] vccio_sd_s0: supplied by vcc5v0_sys
+[   19.050353] pldo6_s3: supplied by vcc5v0_sys
+[   19.051604] rk806 spi2.0: no sleep-setting state
+[   19.051630] rk806 spi2.0: no reset-setting pinctrl state
+[   19.051641] rk806 spi2.0: no dvs-setting pinctrl state
+[   19.055056] rockchip-spi feb20000.spi: probed, poll=0, rsd=0
+[   19.056247] wk2xxx_init: SPI driver for spi to Uart chip WK2XXX, etc.
+[   19.056269] wk2xxx_init: V2.4 On 2022.07.24
+[   19.056380] register firefly_spi_init spi return v = :0
+[   19.057255] wireguard: allowedips self-tests: pass
+[   19.069048] wireguard: nonce counter self-tests: pass
+[   19.069155] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
+[   19.095267] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
+[   19.121966] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-[   65.331671] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
-[   65.357467] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
-[   65.401311] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
-[   65.427674] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
-[   65.447877] wireguard: ratelimiter self-tests: pass
-[   65.448117] wireguard: WireGuard 1.0.0 loaded[I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026531840 queue 0 ready
+[   19.148633] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
+[   19.195826] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
+[   19.222171] rk-pcie fe190000.pcie: PCIe Linking... LTSSM is 0x3
+[   19.242368] wireguard: ratelimiter self-tests: pass
+[   19.242610] wireguard: WireGuard 1.0.0 loaded[I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026531840 queue 0 ready
 . See www.wireguard.com for information.
-[   65.448131] wireguard: C[I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026531840 queue 1 ready
+[   19.242623] wireguard: C[I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026531840 queue 1 ready
 opyright (C) 2015-2019 Jason A. Donenfeld <Jason@zx2c4.com>. All Righ[I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026531840 queue 2 ready
 ts Reserved.
-[   65.448931] tun: Universal TUN/TAP device driver, 1.6
+[   19.243425] tun: Universal TUN/TAP device driver, 1.6
 [I]>0[rust_shyper::device::virtio::mmio] VM 0 virtio device 4026531840 init ok
-[   65.456330] rk_gmac-dwmac fe1c0000.ethernet: IRQ eth_lpi not found
-[   65.456774] rk_gmac-dwmac fe1c0000.ethernet: no regulator found
-[   65.456792] rk_gmac-dwmac fe1c0000.ethernet: clock input or output? (output).
-[   65.456805] rk_gmac-dwmac fe1c0000.ethernet: TX delay(0x43).
-[   65.456816] rk_gmac-dwmac fe1c0000.ethernet: Can not read property: rx_delay.
-[   65.456827] rk_gmac-dwmac fe1c0000.ethernet: set rx_delay to 0xffffffff
-[   65.456866] rk_gmac-dwmac fe1c0000.ethernet: integrated PHY? (no).
-[   65.456950] rk_gmac-dwmac fe1c0000.ethernet: cannot get clock mac_clk_rx
-[   65.456966] rk_gmac-dwmac fe1c0000.ethernet: cannot get clock mac_clk_tx
-[   65.457002] rk_gmac-dwmac fe1c0000.ethernet: cannot get clock clk_mac_speed
-[   65.457193] rk_gmac-dwmac fe1c0000.ethernet: init for RGMII_RXID
-[   65.457455] rk_gmac-dwmac fe1c0000.ethernet: User ID: 0x30, Synopsys ID: 0x51
-[   65.457474] rk_gmac-dwmac fe1c0000.ethernet: 	DWMAC4/5
-[   65.457488] rk_gmac-dwmac fe1c0000.ethernet: DMA HW capability register supported
-[   65.457499] rk_gmac-dwmac fe1c0000.ethernet: RX Checksum Offload Engine supported
-[   65.457509] rk_gmac-dwmac fe1c0000.ethernet: TX Checksum insertion supported
-[   65.457519] rk_gmac-dwmac fe1c0000.ethernet: Wake-Up On Lan supported
-[   65.457593] rk_gmac-dwmac fe1c0000.ethernet: TSO supported
-[   65.457605] rk_gmac-dwmac fe1c0000.ethernet: Enable RX Mitigation via HW Watchdog Timer
-[   65.457619] rk_gmac-dwmac fe1c0000.ethernet: Enabled Flow TC (entries=2)
-[   65.457630] rk_gmac-dwmac fe1c0000.ethernet: TSO feature enabled
-[   65.457641] rk_gmac-dwmac fe1c0000.ethernet: Using 32 bits DMA width
-[   65.594858] [HXTP] himax_hx83102_init
-[   65.594882] [HXTP] himax_hx83102_probe:Enter
-[   65.594943] [HXTP] Himax common touch panel driver init
-[   65.597554] input: rk805 pwrkey as /devices/platform/feb20000.spi/spi_master/spi2/spi2.0/rk805-pwrkey.1.auto/input/input0
-[   65.598123] i2c /dev entries driver
-[   65.602637] vdd_cpu_big0_s0: supplied by vcc5v0_sys
-[   65.611947] vdd_cpu_big1_s0: supplied by vcc5v0_sys
-[   65.620293] vdd_npu_s0: supplied by vcc5v0_sys
-[   65.626679] [HXTP] himax_chip_common_probe:Enter
-[   65.626747] [HXTP] Prepare kernel fp
-[   65.637906] [HXTP] PDATA START
-[   65.637920] [HXTP] ic_data START
-[   65.637936] [HXTP]  DT-himax_parse_dt:panel-coords = 0, 799, 0, 1279
-[   65.637949] [HXTP]  DT-himax_parse_dt:display-coords = (800, 1280)
-[   65.637991] [HXTP]  DT:gpio_3v3_en value is not valid
-[   65.638002] [HXTP]  DT:gpio_irq=39, gpio_rst=42, gpio_3v3_en=-2
-[   65.638012] [HXTP]  DT:protocol_type=1
-[   65.638021] [HXTP]  DT-No vk info in DT
-[   65.640114] [HXTP] himax_get_ksym_idx: symtable size: 1
-[   65.640129] [HXTP] hx83102_pin_reset: Now reset the Touch chip.
-[   65.721243] [HXTP][ERROR] himax_bus_read: i2c_read_block retry over 3
-[   65.721261] [HXTP][ERROR] hx83102_chip_detect: i2c access fail!
-[   65.721272] [HXTP] himax_chip_common_init:num=0,chip NOT found! go Next
-[   65.721281] [HXTP][ERROR] himax_chip_common_init: chip detect failed!
-[   65.721368] himax_tp: probe of 4-0048 failed with error -9
-[   65.730439] device-mapper: ioctl: 4.44.0-ioctl (2021-02-01) initialised: dm-devel@redhat.com
+[   19.250839] rk_gmac-dwmac fe1c0000.ethernet: IRQ eth_lpi not found
+[   19.251282] rk_gmac-dwmac fe1c0000.ethernet: no regulator found
+[   19.251300] rk_gmac-dwmac fe1c0000.ethernet: clock input or output? (output).
+[   19.251313] rk_gmac-dwmac fe1c0000.ethernet: TX delay(0x43).
+[   19.251325] rk_gmac-dwmac fe1c0000.ethernet: Can not read property: rx_delay.
+[   19.251336] rk_gmac-dwmac fe1c0000.ethernet: set rx_delay to 0xffffffff
+[   19.251391] rk_gmac-dwmac fe1c0000.ethernet: integrated PHY? (no).
+[   19.251458] rk_gmac-dwmac fe1c0000.ethernet: cannot get clock mac_clk_rx
+[   19.251474] rk_gmac-dwmac fe1c0000.ethernet: cannot get clock mac_clk_tx
+[   19.251511] rk_gmac-dwmac fe1c0000.ethernet: cannot get clock clk_mac_speed
+[   19.251702] rk_gmac-dwmac fe1c0000.ethernet: init for RGMII_RXID
+[   19.251963] rk_gmac-dwmac fe1c0000.ethernet: User ID: 0x30, Synopsys ID: 0x51
+[   19.251981] rk_gmac-dwmac fe1c0000.ethernet: 	DWMAC4/5
+[   19.251995] rk_gmac-dwmac fe1c0000.ethernet: DMA HW capability register supported
+[   19.252006] rk_gmac-dwmac fe1c0000.ethernet: RX Checksum Offload Engine supported
+[   19.252016] rk_gmac-dwmac fe1c0000.ethernet: TX Checksum insertion supported
+[   19.252027] rk_gmac-dwmac fe1c0000.ethernet: Wake-Up On Lan supported
+[   19.252102] rk_gmac-dwmac fe1c0000.ethernet: TSO supported
+[   19.252114] rk_gmac-dwmac fe1c0000.ethernet: Enable RX Mitigation via HW Watchdog Timer
+[   19.252128] rk_gmac-dwmac fe1c0000.ethernet: Enabled Flow TC (entries=2)
+[   19.252138] rk_gmac-dwmac fe1c0000.ethernet: TSO feature enabled
+[   19.252168] rk_gmac-dwmac fe1c0000.ethernet: Using 32 bits DMA width
+[   19.389358] [HXTP] himax_hx83102_init
+[   19.389382] [HXTP] himax_hx83102_probe:Enter
+[   19.389443] [HXTP] Himax common touch panel driver init
+[   19.392063] input: rk805 pwrkey as /devices/platform/feb20000.spi/spi_master/spi2/spi2.0/rk805-pwrkey.1.auto/input/input0
+[   19.392633] i2c /dev entries driver
+[   19.397155] vdd_cpu_big0_s0: supplied by vcc5v0_sys
+[   19.406447] vdd_cpu_big1_s0: supplied by vcc5v0_sys
+[   19.414793] vdd_npu_s0: supplied by vcc5v0_sys
+[   19.421183] [HXTP] himax_chip_common_probe:Enter
+[   19.421249] [HXTP] Prepare kernel fp
+[   19.432407] [HXTP] PDATA START
+[   19.432421] [HXTP] ic_data START
+[   19.432437] [HXTP]  DT-himax_parse_dt:panel-coords = 0, 799, 0, 1279
+[   19.432449] [HXTP]  DT-himax_parse_dt:display-coords = (800, 1280)
+[   19.432492] [HXTP]  DT:gpio_3v3_en value is not valid
+[   19.432502] [HXTP]  DT:gpio_irq=39, gpio_rst=42, gpio_3v3_en=-2
+[   19.432512] [HXTP]  DT:protocol_type=1
+[   19.432521] [HXTP]  DT-No vk info in DT
+[   19.434615] [HXTP] himax_get_ksym_idx: symtable size: 1
+[   19.434631] [HXTP] hx83102_pin_reset: Now reset the Touch chip.
+[   19.515719] [HXTP][ERROR] himax_bus_read: i2c_read_block retry over 3
+[   19.515737] [HXTP][ERROR] hx83102_chip_detect: i2c access fail!
+[   19.515748] [HXTP] himax_chip_common_init:num=0,chip NOT found! go Next
+[   19.515757] [HXTP][ERROR] himax_chip_common_init: chip detect failed!
+[   19.515844] himax_tp: probe of 4-0048 failed with error -9
+[   19.524919] device-mapper: ioctl: 4.44.0-ioctl (2021-02-01) initialised: dm-devel@redhat.com
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-[   65.732913] cpu cpu0: bin=0
-[   65.733158] cpu cpu0: leakage=7
-[   65.734055] cpu cpu0: _of_add_opp_table_v2: no supported OPPs
-[   65.734169] cpu cpu0: OPP table can't be empty
-[   65.735829] sdhci: Secure Digital Host Controller Interface driver
-[   65.735852] sdhci: Copyright(c) Pierre Ossman
-[   65.735862] Synopsys Designware Multimedia Card Interface Driver
-[   65.736473] sdhci-pltfm: SDHCI platform and OF driver helper
-[   65.739268] arm-scmi firmware:scmi: Failed. SCMI protocol 17 not a[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x80000001, x1 0x80000002, x2 0xffffffc009768620, x3 0x0
+[   19.527403] cpu cpu0: bin=0
+[   19.527646] cpu cpu0: leakage=7
+[   19.528536] cpu cpu0: _of_add_opp_table_v2: no supported OPPs
+[   19.528655] cpu cpu0: OPP table can't be empty
+[   19.530314] sdhci: Secure Digital Host Controller Interface driver
+[   19.530336] sdhci: Copyright(c) Pierre Ossman
+[   19.530346] Synopsys Designware Multimedia Card Interface Driver
+[   19.530959] sdhci-pltfm: SDHCI platform and OF driver helper
+[   19.533761] arm-scmi firmware:scmi: Failed. SCMI protocol 17 not a[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x80000001, x1 0x80000002, x2 0xffffffc009768620, x3 0x0
 ctive.
-[   65.740826] SMCCC: SOC_ID: ARCH_FEATURES(ARCH_SOC_ID) returned error: fffffffffffffffd
-[   65.742583] cryptodev: driver 1.12 loaded.
-[   65.742721] hid: raw HID events driver (C) Jiri Kosina
-[   65.743382] ashmem: initialized
-[   65.751030] Firefly adc init
-[   65.751053] Firefly adc-->FIREFLY_ADC_SAMPLE_JIFFIES:  16 
-[   65.751062] Firefly adc-->MSEC_PER_SEC:  1000 
-[   65.[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0xbf00ff01, x1 0x0, x2 0x0, x3 0x0
+[   19.535318] SMCCC: SOC_ID: ARCH_FEATURES(ARCH_SOC_ID) returned error: fffffffffffffffd
+[   19.537073] cryptodev: driver 1.12 loaded.
+[   19.537212] hid: raw HID events driver (C) Jiri Kosina
+[   19.537877] ashmem: initialized
+[   19.545532] Firefly adc init
+[   19.545555] Firefly adc-->FIREFLY_ADC_SAMPLE_JIFFIES:  16 
+[   19.545565] Firefly adc-->MSEC_PER_SEC:  1000 
+[   19.[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0xbf00ff01, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0xb2000001, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0xbf00ff03, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0xb2000009, x1 0x1, x2 0x0, x3 0x0
-751071] Firefly adc-->HZ:  300 
-[   65.751549] Firefly adc-->ret:  0 
-[   65.751979] optee: probing fo[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0xb200000a, x1 0x0, x2 0x0, x3 0x0
-r conduit method.
+545574] Firefly adc-->HZ:  300 
+[   19.546051] Firefly adc-->ret:  0 
+[   19.546482] optee: probing f[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0xb200000a, x1 0x0, x2 0x0, x3 0x0
+or conduit method.
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0xb200000b, x1 0x0, x2 0x0, x3 0x0
-[   65.753867] optee: revision 3.13 (62aa10b7)
-[   65.758131] optee:[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x32000004, x1 0x0, x2 0xb737000, x3 0x0
+[   19.548368] optee: revision 3.13 (62aa10b7)
+[   19.552634] optee:[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x32000004, x1 0x0, x2 0xb54e000, x3 0x0
  dynamic shared memory is enabled
-[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x32000004, x1 0x0, x2 0xb737000, x3 0x0
-[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x32000004, x1 0x0, x2 0xb737000, x3 0x0
-[   65.761690] optee: initialized driver
-[   65.763157] xt_time: kernel timezone is -0000
-[   65.763529] ipt_CLUSTERIP: ClusterIP Version 0.8 loaded successfully
-[   65.763582] Initializing XFRM netlink socket
-[   65.764239] NET: Registered protocol family 10
-[   65.765389] Segment Routing with IPv6
-[   65.765698] NET: Registered protocol family 17
-[   65.765731] NET: Registered protocol family 15
-[   65.765791] Bridge firewalling registered
-[   65.765849] 8021q: 802.1Q VLAN Support v1.8
-[   65.765878] [BT_RFKILL]: Enter rfkill_rk_init
-[   65.765892] [WLAN_RFKILL]: Enter rfkill_wlan_init
-[   65.766841] Key type dns_resolver registered
-[   65.768039] registered taskstats version 1
-[   65.768063] Loading compiled-in X.509 certificates
-[   65.768296] mmc0: SDHCI controller on fe2e0000.mmc [fe2e0000.mmc] using ADMA
-[   65.769597] pstore: Using crash dump compression: deflate
-[   65.770581] rga3_core0 fdb60000.rga: Adding to iommu group 2
-[   65.770624] iommu: Failed to allocate default IOMMU domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
-[   65.771058] rga: rga3_core0, irq = 36, match scheduler
-[   65.771510] rga: rga3_core0 hardware loaded successfully, hw_version:3.0.76831.
-[   65.771586] rga: rga3_core0 probe successfully
-[   65.772301] rga3_core1 fdb70000.rga: Adding to iommu group 3
-[   65.772331] iommu: Failed to allocate default IOMMU domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
-[   65.772585] rga: rga3_core1, irq = 37, match scheduler
-[   65.772998] rga: rga3_core1 hardware loaded successfully, hw_version:3.0.76831.
-[   65.773076] rga: rga3_core1 probe successfully
-[   65.773835] rga: rga2, irq = 38, match scheduler
-[   65.774298] rga: rga2 hardware loaded successfully, hw_version:3.2.63318.
-[   65.774320] rga: rga2 probe successfully
-[   65.774677] rga_iommu: IOMMU binding successfully, default mapping core[0x1]
-[   65.774976] rga: Module initialized. v1.2.26
-[   65.774990] 
-[   65.774999] ********************************************************************
-[   65.775008] **     NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE           **
-[   65.775016] **                                                                **
-[   65.775024] **  WRITEABLE clk DebugFS SUPPORT HAS BEEN ENABLED IN THIS KERNEL **
-[   65.775036] **                                                                **
-[   65.775061] ** This means that this kernel is built to expose clk operations  **
-[   65.775069] ** such as parent or rate setting, enabling, disabling, etc.      **
-[   65.775077] ** to userspace, which may compromise security on your system.    **
-[   65.775085] **                                                                **
-[   65.775092] ** If you see this message and you are not debugging the          **
-[   65.775101] ** kernel, report this immediately to your vendor!                **
-[   65.775108] **                                                                **
-[   65.775116] **     NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE           **
-[   65.775124] ********************************************************************
-[   65.805183] mmc0: Host Software Queue enabled
-[   65.805220] mmc0: new HS400 Enhanced strobe MMC card at address 0001
-[   65.811052] mmcblk0: mmc0:0001 Y0S064 58.3 GiB 
-[   65.811304] mmcblk0boot0: mmc0:0001 Y0S064 partition 1 4.00 MiB
-[   65.811552] mmcblk0boot1: mmc0:0001 Y0S064 partition 2 4.00 MiB
-[   65.811789] mmcblk0rpmb: mmc0:0001 Y0S064 partition 3 16.0 MiB, chardev (239:0)
-[   65.814912]  mmcblk0: p1 p2 p3 p4 p5 p6 p7
-[   65.850759] rockchip-thermal fec00000.tsadc: Missing rockchip,grf proper[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x32000004, x1 0x0, x2 0xb54e000, x3 0x0
+[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x32000004, x1 0x0, x2 0xb54e000, x3 0x0
+[   19.556192] optee: initialized driver
+[   19.557655] xt_time: kernel timezone is -0000
+[   19.558033] ipt_CLUSTERIP: ClusterIP Version 0.8 loaded successfully
+[   19.558086] Initializing XFRM netlink socket
+[   19.558744] NET: Registered protocol family 10
+[   19.559902] Segment Routing with IPv6
+[   19.560211] NET: Registered protocol family 17
+[   19.560244] NET: Registered protocol family 15
+[   19.560303] Bridge firewalling registered
+[   19.560355] 8021q: 802.1Q VLAN Support v1.8
+[   19.560384] [BT_RFKILL]: Enter rfkill_rk_init
+[   19.560394] [WLAN_RFKILL]: Enter rfkill_wlan_init
+[   19.561351] Key type dns_resolver registered
+[   19.562552] registered taskstats version 1
+[   19.562577] Loading compiled-in X.509 certificates
+[   19.562811] mmc0: SDHCI controller on fe2e0000.mmc [fe2e0000.mmc] using ADMA
+[   19.564103] pstore: Using crash dump compression: deflate
+[   19.565085] rga3_core0 fdb60000.rga: Adding to iommu group 2
+[   19.565129] iommu: Failed to allocate default IOMMU domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
+[   19.565563] rga: rga3_core0, irq = 36, match scheduler
+[   19.566015] rga: rga3_core0 hardware loaded successfully, hw_version:3.0.76831.
+[   19.566091] rga: rga3_core0 probe successfully
+[   19.566808] rga3_core1 fdb70000.rga: Adding to iommu group 3
+[   19.566839] iommu: Failed to allocate default IOMMU domain of type 4 for group (null) - Falling back to IOMMU_DOMAIN_DMA
+[   19.567092] rga: rga3_core1, irq = 37, match scheduler
+[   19.567503] rga: rga3_core1 hardware loaded successfully, hw_version:3.0.76831.
+[   19.567581] rga: rga3_core1 probe successfully
+[   19.568342] rga: rga2, irq = 38, match scheduler
+[   19.568804] rga: rga2 hardware loaded successfully, hw_version:3.2.63318.
+[   19.568826] rga: rga2 probe successfully
+[   19.569183] rga_iommu: IOMMU binding successfully, default mapping core[0x1]
+[   19.569483] rga: Module initialized. v1.2.26
+[   19.569497] 
+[   19.569506] ********************************************************************
+[   19.569515] **     NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE           **
+[   19.569523] **                                                                **
+[   19.569531] **  WRITEABLE clk DebugFS SUPPORT HAS BEEN ENABLED IN THIS KERNEL **
+[   19.569543] **                                                                **
+[   19.569568] ** This means that this kernel is built to expose clk operations  **
+[   19.569576] ** such as parent or rate setting, enabling, disabling, etc.      **
+[   19.569584] ** to userspace, which may compromise security on your system.    **
+[   19.569592] **                                                                **
+[   19.569600] ** If you see this message and you are not debugging the          **
+[   19.569608] ** kernel, report this immediately to your vendor!                **
+[   19.569616] **                                                                **
+[   19.569624] **     NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE           **
+[   19.569631] ********************************************************************
+[   19.599729] mmc0: Host Software Queue enabled
+[   19.599764] mmc0: new HS400 Enhanced strobe MMC card at address 0001
+[   19.605552] mmcblk0: mmc0:0001 Y0S064 58.3 GiB 
+[   19.605808] mmcblk0boot0: mmc0:0001 Y0S064 partition 1 4.00 MiB
+[   19.606052] mmcblk0boot1: mmc0:0001 Y0S064 partition 2 4.00 MiB
+[   19.606290] mmcblk0rpmb: mmc0:0001 Y0S064 partition 3 16.0 MiB, chardev (239:0)
+[   19.609429]  mmcblk0: p1 p2 p3 p4 p5 p6 p7
+[   19.645312] rockchip-thermal fec00000.tsadc: Missing rockchip,grf proper[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 ty
-[   65.850928] rockchip-thermal fec00000.tsadc: failed to registe[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+[   19.645480] rockchip-thermal fec00000.tsadc: failed to registe[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 r sensor 0: -517
-[   65.850944] rockchip-thermal fec00000.tsadc: failed to register sensor[0] : error = -517
-[   65.852232] vcc_3v3_sd_s0: supplied by vcc_3v3_s3
-[   65.857753] mali fb000000.gpu: Kernel DDK version g18p0-01eac0
+[   19.645495] rockchip-thermal fec00000.tsadc: failed to register sensor[0] : error = -517
+[   19.646784] vcc_3v3_sd_s0: supplied by vcc_3v3_s3
+[   19.654234] input: adc-keys as /devices/platform/adc-keys/input/input1
+[   19.654621] mali fb000000.gpu: Kernel DDK version g18p0-01eac0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-[   65.860044] mali fb000000.gpu: bin=0
-[   65.861930] input: adc-keys as /devices/platform/adc-keys/input/input1
-[   65.862232] mali fb000000.gpu: leakage=10
-[   65.862337] mali fb000000.gpu: _of_add_opp_table_v2: no supported OPPs
-[   65.862351] mali fb000000.gpu: Invalid operating-points in device tree.
-[   65.862366] mali fb000000.gpu: Failed to init_opp_table (-2)
-[   65.862400] W : [File] : drivers/gpu/arm/bifrost/platform/rk/mali_kbase_config_rk.c; [Line] : 143; [Func] : kbase_platform_rk_init(); power-off-delay-ms not available.
-[[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-   65.863653] mali fb000000.gpu: No OPPs found in device tree! Scaling timeouts using 100000 kHz
-[   65.863675] mali fb000000.gpu: r0p0 status 5 not found in HW issues table;
-[   65.863688] mali fb000000.gpu: falling back to closest match: r0p0 status 0
-[   65.863699] mali fb000000.gpu: Execution proceeding normally with fallback match
-[   65[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-.863713] mali fb000000.gpu: GPU identified as 0x7 arch 10.8.6 r0p0 status 0
-[   65.863808] mali fb000000.gpu: No priority control manager is configured
-[   65.864129] rockchip-thermal fec00000.tsadc: Missing rockchip,grf property
-[   65.864213] rockchip-thermal fec00000.tsa[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-dc: failed to register sensor 0: -517
-[   65.864226] rockchip-therma[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-l fec00000.tsadc: failed to register sensor[0] : error = -517
-[   65.865646] mali fb000000.gpu: No memory group manager is configured
-[   65.865692] mali fb000000.gpu: Protected memory allocator not available
-[   65.867688] rockchip-thermal fec00000.tsadc: Missing rockchip,grf property
-[   65.867779] rockchip-thermal fec00000.tsadc: failed to reg[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-ister sensor 0: -517
-[   65.867793] rockchip-thermal fec00000.tsadc: failed to register sensor[0] : error = -517
-[   65.870887] mali fb000000.gpu: Capping CSF_FIRMWARE_TIMEOUT to CSF_FIRMWARE_PING_TIMEOUT
-[   65.875186] cfg80211: Loading compiled-in X.509 certificates for regulatory database
-[   65.878412] mali fb000000.gpu: Continuing without devfreq
-[   65.882157] mali fb000000.gpu: Probed as mali0, this is r1_on_g18_on_linux-5.10-gen-rkr4.1_for_defect_414343 
-[   65.885298] rockchip-thermal fec00000.tsadc: Missing rockchip,grf property
-[   65.885465] rockchip-thermal fec00000.tsadc: failed to register sensor 0: -517
-[   65.885480] rockchip-thermal fec00000.tsadc: failed to register sensor[0] : error = -517
-[   65.886037] dwmmc_rockchip fe2c0000.mmc: IDMAC supports 32-bit address mode.
-[   65.886146] dwmmc_rockchip fe2c0000.mmc: Using internal DMA controller.
-[   65.886192] dwmmc_rockchip fe2c0000.mmc: Version ID is 270a
-[   65.886442] dwmmc_rockchip fe2c0000.mmc: DW MMC controller at irq 95,32 bit host data width,256 deep fifo
-[   65.891694] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
-[   65.892101] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
-[   65.892118] cfg80211: failed to load regulatory.db
-[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000003, x1 0x1, x2 0x4, x3 0x0
+[   19.656439] mali fb000000.gpu: bin=0
+[   19.656732] mali fb000000.gpu: leakage=10
+[   19.656820] mali fb000000.gpu: _of_add_opp_table_v2: no supported OPPs
+[   19.656834] mali fb000000.gpu: Invalid operating-points in device tree.
+[   19.656850] mali fb000000.gpu: Failed to init_opp_table (-2)
+[   19.656883] W : [File] : drivers/gpu/arm/b[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ifrost/platform/rk/mali_kbase_config_rk.c; [Line] : 143; [Func] : kbase_platform_rk_init(); power-off-delay-ms not available.
+[   19.658065] mali fb000000.gpu: No OPPs found in device tree! Scaling timeouts using 100000 kHz
+[   19.658089] mali fb000000.gpu: r0p0 status 5 not found in HW issues table;
+[   19.658102] mali fb000000.gpu: falling back to closest match: r0p0 status 0
+[   19.658112] mali fb000000.gpu: Execution proceeding normally with fallback match
+[   19.658126] mali fb000000.gpu: GPU identified as 0x7 arch 10.8.6 r0p0 status 0
+[   19.658205] mali fb000000.gpu: No priority control manager is configured
+[   19.658900] mali fb000000.gpu: No memory group manager is configured
+[   19.658945] mali fb000000.gpu: Protected memory allocator not available
+[   19.660946] mali fb000000.g[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+pu: Capping CSF_FIRMWARE_TIMEOUT to CSF_FIRMWARE_PING_TIMEOUT
+[   19[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+.662203] rockchip-thermal fec00000.tsadc: Missing rockchip,grf property
+[   19.662307] rockchip-thermal fec00000.tsadc: failed to register sensor 0: -517
+[   19.662320] rockchip-thermal fec00000.tsadc: failed to register sensor[0] : error = -517
+[   19.663549] rockchip-thermal fec00000.tsadc: Missing rockchip,grf proper[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ty
+[   19.663633] rockchip-thermal fec00000.tsadc: failed to register sensor 0: -517
+[   19.663647] rockchip-thermal fec00000.tsadc: failed to register sensor[0] : error = -517
+[   19.666519] mali fb000000.gpu: Continuing without devfreq
+[   19.667155] mali fb000000.gpu: Probed as mali0, this is r1_on_g18_on_linux-5.10-gen-rkr4.1_for_defect_414343 
+[   19.667721] rockchip-thermal fec00000.tsadc: Missing rockchip,grf property
+[   19.667805] rockchip-thermal fec00000.tsadc: failed to register sensor 0: -517
+[   19.667818] rockchip-thermal fec00000.tsadc: failed to register sensor[0] : error = -517
+[   19.670187] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[   19.677469] dwmmc_rockchip fe2c0000.mmc: IDMAC supports 32-bit address mode.
+[   19.677622] dwmmc_rockchip fe2c0000.mmc: Using internal DMA controller.
+[   19.677641] dwmmc_rockchip fe2c0000.mmc: Version ID is 270a
+[   19.678453] dwmmc_rockchip fe2c0000.mmc: DW MMC controller at irq 95,32 bit host data width,256 deep fifo
+[   19.683278] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[   19.683543] platform r[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000003, x1 0x1, x2 0x4, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000003, x1 0x2, x2 0x900, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000003, x1 0x4, x2 0x0, x3 0xffff
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000003, x1 0x5, x2 0x0, x3 0x0
-[   65.896664] rockchip-pm rockchip-suspend: not set pwm-regulator-config
-[   65.898365] rockchip-suspend not set sleep-mode-config for mem-lite
-[   65.898378] rockchip-suspend not set wakeup-config for mem-lite
-[   65.898393] rockchip-suspend not set sleep-mode-config for mem-ultra
-[   65.898403] ro[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-ckchip-suspend not set wakeup-config for mem-ultra
-[   65.899171] ro[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-ckchip-thermal fec00000.tsadc: Missing rockchip,grf property
-[   65.[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-899437] rockchip-thermal fec00000.tsadc: failed to register sensor 0: -517
-[   65.899453] rockchip-thermal fec00000.tsadc: failed to register sensor[0] : error = -517
-[   65.905758] mmc_host mmc1: Bus speed (slot 0) = 400000Hz (slot req 400000Hz, actual 400000HZ div = 0)
-[   65.906262] I : [File] : drivers/gpu/arm/mali400/mali/linux/mali_kernel_linux.c; [Line] : 406; [Func] : mali_module_init(); svn_rev_string_from_arm of this mali_ko is '', rk_ko_ver is '5', built at '21:46:42', on 'Sep 20 2023'.
-[   65.907068] Mali: 
-[   65.907073] Mali device driver loaded
-[   65.908283] ret 1024 1
-[   65.911715] vendor storage:20190527 ret = 0
-[   65.918006] rockchip-thermal fec00000.tsadc: Missing rockchip,grf property
-[   65.918098] rockchip-thermal fec00000.tsadc: failed to register sensor 0: -517
-[   65.918111] rockchip-thermal fec00000.tsadc: failed to register sensor[0] : error = -517
-[   65.924198] EXT4-fs (mmcblk0p6): mounted filesystem with ordered data mode. Opts: (null)
-[   65.924261] VFS: Mounted root (ext4 filesystem) on device 179:6.
-[   65.924654] devtmpfs: mounted
-[   65.926165] Freeing unused kernel memory: 3904K
-[   65.930822] Run /sbin/init as init process
-starting pid 163, tty '': '/bin/mount -t proc proc /proc'
-starting pid 164, tty '': '/bin/mount -t sysfs sysfs /sys'
-starting pid 165, tty '': '/bin/mount -t devtmpfs devtmpfs /dev'
+egulatory.0: Direct firmware load for regulatory.db failed with error -2
+[   19.683558] cfg80211: failed to load regulatory.db
+[   19.688613] rockchip-pm rockchip-suspend: not set pwm-regulator-config
+[   19.690268] rockchip-suspend not set sleep-mode-config for mem-lite
+[   19.690279] rockchip-suspend [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+not set wakeup-config for mem-lite
+[   19.690294] rockchip-suspend n[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+ot set sleep-mode-config for mem-ultra
+[   19.690303] rockchip-suspend not set wakeup-config for mem-ultra
+[   19.691472] rockchip-therm[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+al fec00000.tsadc: Missing rockchip,grf property
+[   19.691654] rockchip-thermal fec00000.tsadc: failed to register sensor 0: -517
+[   19.691669] rockchip-thermal fec00000.tsadc: failed to register sensor[0] : error = -517
+[   19.698383] I : [File] : drivers/gpu/arm/mali400/mali/linux/mali_kernel_linux.c; [Line] : 406; [Func] : mali_module_init(); svn_rev_string_from_arm of this mali_ko is '', rk_ko_ver is '5', built at '21:46:42', on 'Sep 20 2023'.
+[   19.699281] Mali: 
+[   19.699285] Mali device driver loaded
+[   19.699597] mmc_host mmc1: Bus speed (slot 0) = 400000Hz (slot req 400000Hz, actual 400000HZ div = 0)
+[   19.700682] ret 1024 1
+[   19.706877] vendor storage:20190527 ret = 0
+[   19.712499] rockchip-thermal fec00000.tsadc: Missing rockchip,grf property
+[   19.712590] rockchip-thermal fec00000.tsadc: failed to register sensor 0: -517
+[   19.712604] rockchip-thermal fec00000.tsadc: failed to register sensor[0] : error = -517
+[   19.727074] EXT4-fs (mmcblk0p6): recovery complete
+[   19.727680] EXT4-fs (mmcblk0p6): mounted filesystem with ordered data mode. Opts: (null)
+[   19.727744] VFS: Mounted root (ext4 filesystem) on device 179:6.
+[   19.728162] devtmpfs: mounted
+[   19.729692] Freeing unused kernel memory: 3904K
+[   19.729859] Run /sbin/init as init process
+starting pid 162, tty '': '/bin/mount -t proc proc /proc'
+starting pid 163, tty '': '/bin/mount -t sysfs sysfs /sys'
+starting pid 164, tty '': '/bin/mount -t devtmpfs devtmpfs /dev'
 mount: mounting devtmpfs on /dev failed: Device or resource busy
-starting pid 166, tty '': '/bin/mount -o remount,rw /'
-[   65.984207] EXT4-fs (mmcblk0p6): re-mounted. Opts: (null)
-starting pid 167, tty '': '/bin/mkdir -p /dev/shm'
-starting pid 168, tty '': '/bin/mkdir -p /dev/pts'
-starting pid 169, tty '': '/bin/mount -a'
-starting pid 170, tty '': '/sbin/swapon -a'
-starting pid 176, tty '': '/etc/init.d/rcS'
+starting pid 165, tty '': '/bin/mount -o remount,rw /'
+[   19.782069] EXT4-fs (mmcblk0p6): re-mounted. Opts: (null)
+starting pid 166, tty '': '/bin/mkdir -p /dev/shm'
+starting pid 167, tty '': '/bin/mkdir -p /dev/pts'
+starting pid 168, tty '': '/bin/mount -a'
+starting pid 169, tty '': '/sbin/swapon -a'
+starting pid 175, tty '': '/etc/init.d/rcS'
 Starting mdev... OK
-[   66.380047] EXT4-fs (mmcblk0p7): mounted filesystem with ordered data mode. Opts: (null)
-[   66.441376] FAT-fs (mmcblk0p5): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
-[   66.520892] FAT-fs (mmcblk0p3): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
-[   66.598044] FAT-fs (mmcblk0p1): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
-[   66.731660] FAT-fs (mmcblk0p4): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
-[   66.811741] FAT-fs (mmcblk0p2): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
-[   67.127880] EXT4-fs (mmcblk0p6): re-mounted. Opts: (null)
+[   20.181503] EXT4-fs (mmcblk0p7): recovery complete
+[   20.185288] EXT4-fs (mmcblk0p7): mounted filesystem with ordered data mode. Opts: (null)
+[   20.242522] FAT-fs (mmcblk0p5): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
+[   20.319578] FAT-fs (mmcblk0p3): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
+[   20.395892] FAT-fs (mmcblk0p1): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
+[   20.532845] FAT-fs (mmcblk0p4): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
+[   20.612284] FAT-fs (mmcblk0p2): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
+[   20.926426] EXT4-fs (mmcblk0p6): re-mounted. Opts: (null)
 hwclock: can't open '/dev/misc/rtc': No such file or directory
 Fri Mar  9 12:34:56 UTC 2018
 hwclock: can't open '/dev/misc/rtc': No such file or directory
@@ -1029,16 +1159,16 @@ done.
 starting statd: done
 Starting audit daemon auditd
 0
-Starting DHCP server: [   67.854116] rk-pcie fe190000.pcie: PCIe Link Fail
-[   67.854150] rk-pcie fe190000.pcie: failed to initialize host
+Starting DHCP server: [   21.648614] rk-pcie fe190000.pcie: PCIe Link Fail
+[   21.648647] rk-pcie fe190000.pcie: failed to initialize host
 .
 hwclock: can't open '/dev/misc/rtc': No such file or directory
 starting rsyslogd ... done
 Cleaning up tmp :
 Setting up interface lo: 
-System booting cost:4.64 0.25
+System booting cost:4.65 0.25
 Starting crond: OK
-starting pid 473, tty '/dev/ttyFIQ0': '/sbin/getty 115200 ttyFIQ0'
+starting pid 472, tty '/dev/ttyFIQ0': '/sbin/getty 115200 ttyFIQ0'
 
 openEuler Embedded(openEuler Embedded Reference Distro) 24.03-LTS roc-rk3588s-pc /dev/ttyFIQ0
 
@@ -1057,46 +1187,68 @@ openEuler Embedded(openEuler Embedded Reference Distro) 24.03-LTS roc-rk3588s-pc
 Authorized uses only. All activity may be monitored and reported.
 
 roc-rk3588s-pc login: root
-roc-rk3588s-pc ~ # ls
-Image_rk3588  Image_rk3588-20241126.tgz  all-rk3588s-20250402-euler.tgz  arceos_bencher.tgz  bencher  eth.sh  euler  extboot.tgz  mmcblk0p1.img  rk3588s.dtb  tmp  uboot.img  uboot1.img  uboot2.img
 roc-rk3588s-pc ~ # cd bencher/
-roc-rk3588s-pc ~/bencher # ls *.sh
-disable-arceos-vm1.sh  run-arceos-vm1.sh
-roc-rk3588s-pc ~/bencher # ./run-arceos-vm1.sh
-+ insmod /root/Image_rk3588/zephyr/shyper.ko
-[   96.086364] shyper: loading out-of-tree module taints kernel.
-[   96.088124] [Shyper MOD INFO] Init shyper service
-[   96.088196] [Shyper MOD INFO] major 235 minor 0
-[   96.089034] [Shyper MOD INFO] VM [0] is install[E]>0[rust_shyper::kernel::hvc] not support vm migration and live update
+roc-rk3588s-pc ~/bencher # ls
+bencher_aarch64-202500213.bin  disable-arceos-vm1.sh  vm1_config_arceos1.json			   vm1_config_arceos_euler_eth.json	zephyr_shyper.ko
+bencher_aarch64-bsta1000b.bin  run-arceos-vm1.sh      vm1_config_arceos_bencher_euler_nometa.json  vm1_config_arceos_euler_nometa.json
+roc-rk3588s-pc ~/bencher # cat run-arceos-vm1.sh 
+#!/bin/bash
+# xiaoluoyuan@163.com
+
+set -x
+
+insmod ./zephyr_shyper.ko
+
+# insmod /root/euler/shyper_ko_rk3588_oe.ko
+lsmod
+
+/root/euler/shyper_cli_rk3588_oe system daemon /root/euler/shy_con.json &
+
+sleep 4
+
+#/root/euler/shyper_cli_rk3588_oe vm config vm1_config_arceos_euler_nometa.json
+
+/root/euler/shyper_cli_rk3588_oe vm config vm1_config_arceos_bencher_euler_nometa.json
+
+sleep 2
+
+/root/euler/shyper_cli_rk3588_oe vm boot 1
+
+roc-rk3588s-pc ~/bencher # ./run-arceos-vm1.sh 
++ insmod ./zephyr_shyper.ko
+[   47.800844] shyper: loading out-of-tree module taints kernel.
+[   47.802661] [Shyper MOD INFO] Init shyper service
+[   47.802732] [Shyper MOD INFO] major 235 minor 0
+[   47.803585] [Shyper MOD INFO] VM [0] is install[E]>0[rust_shyper::kernel::hvc] not support vm migration and live update
 ing kernel module
-[   96.089229] [Shyper MOD INFO] register irq success, irq_id is 15
-[   96.089240] [Shyper MOD INFO] handle_hvc_ivc in[E]>0[rust_shyper::kernel::hvc] not support vm migration and live update
+[   47.803779] [Shyper MOD INFO] register irq success, irq_id is 15
+[   47.803791] [Shyper MOD INFO] handle_hvc_ivc in[E]>0[rust_shyper::kernel::hvc] not support vm migration and live update
  kernel module: event is 0x00000000
-[   96.089253] [Shyper MOD INFO] [HVC_IVC_UPDATE_MQ] get vmid 0
-[   96.089388] [Sh[E]>0[rust_shyper::kernel::hvc] not support vm migration and live update
+[   47.803803] [Shyper MOD INFO] [HVC_IVC_UPDATE_MQ] get vmid 0
+[   47.803936] [Sh[E]>0[rust_shyper::kernel::hvc] not support vm migration and live update
 yper MOD INFO] register irq success, irq_id is 14
-[   96.089399] [Shyper MOD INFO] start to register misc device for shared m[E]>0[rust_shyper::kernel::hvc] not support vm migration and live update
-em
+[   47.803948] [Shyper MOD INFO] start to register misc device for shar[E]>0[rust_shyper::kernel::hvc] not support vm migration and live update
+ed mem
 [E]>0[rust_shyper::kernel::hvc] not support vm migration and live update
 [E]>0[rust_shyper::kernel::hvc] not support vm migration and live update
-[   96.097866] [Shyper MOD INFO] shmem device registered cur_ipa 400004000
+[   47.812413] [Shyper MOD INFO] shmem device registered cur_ipa 400004000
 + lsmod
 Module                  Size  Used by
 shyper                266240  13195122
 + sleep 4
 + /root/euler/shyper_cli_rk3588_oe system daemon /root/euler/shy_con.json
-[2018-03-09T12:35:24Z INFO  shyper_cli_rk3588_oe::daemon] Start Shyper-cli daemon configure
-[2018-03-09T12:35:24Z WARN  shyper_cli_rk3588_oe::blk] /root/euler/zephyr.rootfs is not a block device, but we can also use /root/euler/zephyr.rootfs as a img file
-[2018-03-09T12:35:24Z INFO  shyper_cli_rk3588_oe::blk] Shyper daemon add blk /root/euler/zephyr.rootfs with 36140 sectors
-[2018-03-09T12:35:25Z INFO  shyper_cli_rk3588_oe::daemon] daemon configure 1 mediated disk(s)
-[2018-03-09T12:35:25Z INFO  shyper_cli_rk3588_oe::daemon] daemon configuration finished
-[2018-03-09T12:35:25Z INFO  shyper_cli_rk3588_oe::daemon] VM[0] start to init blk service
+[2018-03-09T12:35:22Z INFO  shyper_cli_rk3588_oe::daemon] Start Shyper-cli daemon configure
+[2018-03-09T12:35:22Z WARN  shyper_cli_rk3588_oe::blk] /root/euler/zephyr.rootfs is not a block device, but we can also use /root/euler/zephyr.rootfs as a img file
+[2018-03-09T12:35:22Z INFO  shyper_cli_rk3588_oe::blk] Shyper daemon add blk /root/euler/zephyr.rootfs with 36140 sectors
+[2018-03-09T12:35:23Z INFO  shyper_cli_rk3588_oe::daemon] daemon configure 1 mediated disk(s)
+[2018-03-09T12:35:23Z INFO  shyper_cli_rk3588_oe::daemon] daemon configuration finished
+[2018-03-09T12:35:23Z INFO  shyper_cli_rk3588_oe::daemon] VM[0] start to init blk service
     
-[2018-03-09T12:35:25Z INFO  shyper_cli_rk3588_oe::blk] Shyper daemon init blk MEDBLK0 with cache size 33554432
-[2018-03-09T12:35:25Z INFO  shyper_cli_rk3588_oe::blk] Shyper daemon init blk MEDBLK0 va 0x7f9c000000 with cache pa 0x7a000000
-[I]>0[rust_shyper::device::virtio::mediated] mediated_dev_append: dev_ipa_reg 0xced6000, cache ipa 0x7a000000, cache_pa 0x7a000000, dma_block_max 0x10000
-[2018-03-09T12:35:25Z INFO  shyper_cli_rk3588_oe::blk] Shyper daemon init blk MEDBLK0 success
-[2018-03-09T12:35:25Z INFO  shyper_cli_rk3588_oe::daemon] VM[0] daemon process init success
+[2018-03-09T12:35:23Z INFO  shyper_cli_rk3588_oe::blk] Shyper daemon init blk MEDBLK0 with cache size 33554432
+[2018-03-09T12:35:23Z INFO  shyper_cli_rk3588_oe::blk] Shyper daemon init blk MEDBLK0 va 0x7fba000000 with cache pa 0x7a000000
+[I]>0[rust_shyper::device::virtio::mediated] mediated_dev_append: dev_ipa_reg 0xce8a000, cache ipa 0x7a000000, cache_pa 0x7a000000, dma_block_max 0x10000
+[2018-03-09T12:35:23Z INFO  shyper_cli_rk3588_oe::blk] Shyper daemon init blk MEDBLK0 success
+[2018-03-09T12:35:23Z INFO  shyper_cli_rk3588_oe::daemon] VM[0] daemon process init success
     
 + /root/euler/shyper_cli_rk3588_oe vm config vm1_config_arceos_bencher_euler_nometa.json
 Parse VM config successfully, VM name [vm1-ArceOS-unikernel]
@@ -1108,7 +1260,7 @@ Start to prepare configuration for new VM
 [D]>0[rust_shyper::config::config]       ramdisk is [0x0]
 [I]>0[rust_shyper::config::config] 
 Successfully add GVM[1] name "vm1-ArceOS-unikernel", currently vm_num 2
-[2018-03-09T12:35:28Z INFO  shyper_cli_rk3588_oe::config] Send VM [1] config successfully
+[2018-03-09T12:35:26Z INFO  shyper_cli_rk3588_oe::config] Send VM [1] config successfully
 [I]>0[rust_shyper::config::config] 
 VM[1] vm_cfg_add_mem_region: add region start_ipa 200000 length 40000000
 [I]>0[rust_shyper::config::config] 
@@ -1184,9 +1336,9 @@ Start to init...
 [D]>0[rust_shyper::vmm::init] VM 1 registers passthrough device: ipa=<0xfeb50000>, pa=<0xfeb50000>, size=<0x1000>, device
 [I]>0[rust_shyper::vmm::init] VM 1 id vm1-ArceOS-unikernel init ok
 [I]>0[rust_shyper::config::config] VM[1] Upload kernel image. cache_ipa:78000000 load_offset:0 load_size:18040
-[  100.332301] [Shyper MOD INFO] VM[1] set kernel image name bencher_[2018-03-09T12:35:29Z 32mINFO  shyper_cli_rk3588_oe:a:config] Config VM [1] surccessfully
-ch64-bsta1000b.bin vm+ sleep 2
- num 1
+[   52.046558] [Shyper MOD INFO] VM[1] set kernel image name bencher_[2018-03-09T12:35:27Z 32mINFO  shyper_cli_rk3588_oe:a:config] Config VM [1] successfully
+rch64-bsta1000b.bin + sleep 2
+vm num 1
 + /root/euler/shyper_cli_rk3588_oe vm boot 1
 [I]>4[rust_shyper::vmm::manager] vmm_ipi_handler: core 4 receive ipi
 [I]>4[rust_shyper::vmm::init] Core 4 start running
@@ -1207,31 +1359,31 @@ smp = 1
 build_mode = release
 log_level = info
 
-[102.380203 0 axruntime:126] Logging is enabled.
-[102.380718 0 axruntime:127] Primary CPU 0 started, dtb = 0x200000.
-[102.381382 0 axruntime:129] Found physcial memory regions:
-[102.381986 0 axruntime:131]   [PA:0x400000, PA:0x410000) .text (READ | EXECUTE | RESERVED)
-[102.382839 0 axruntime:131]   [PA:0x410000, PA:0x415000) .rodata (READ | RESERVED)
-[102.383630 0 axruntime:131]   [PA:0x415000, PA:0x419000) .data .tdata .tbss .percpu (READ | WRITE | RESERVED)
-[102.384632 0 axruntime:131]   [PA:0x419000, PA:0x519000) boot stack (READ | WRITE | RESERVED)
-[102.385509 0 axruntime:131]   [PA:0x519000, PA:0x53f000) .bss (READ | WRITE | RESERVED)
-[102.386339 0 axruntime:131]   [PA:0x53f000, PA:0x40200000) free memory (READ | WRITE | FREE)
-[102.387208 0 axruntime:131]   [PA:0xfd5f8000, PA:0xfd5f9000) mmio (READ | WRITE | DEVICE | RESERVED)
-[102.388137 0 axruntime:131]   [PA:0xfd7c0000, PA:0xfd81c000) mmio (READ | WRITE | DEVICE | RESERVED)
-[102.389068 0 axruntime:131]   [PA:0xfeb50000, PA:0xfeb51000) mmio (READ | WRITE | DEVICE | RESERVED)
-[102.389999 0 axruntime:131]   [PA:0xfeba0000, PA:0xfeba1000) mmio (READ | WRITE | DEVICE | RESERVED)
-[102.390929 0 axruntime:131]   [PA:0xfec40000, PA:0xfec41000) mmio (READ | WRITE | DEVICE | RESERVED)
-[102.391862 0 axruntime:131]   [PA:0xfe600000, PA:0xfe620000) mmio (READ | WRITE | DEVICE | RESERVED)
-[102.392791 0 axruntime:131]   [PA:0xfe680000, PA:0xfe780000) mmio (READ | WRITE | DEVICE | RESERVED)
-[102.393722 0 axruntime:131]   [PA:0xfe180000, PA:0xfe190000) mmio (READ | WRITE | DEVICE | RESERVED)
-[102.394653 0 axruntime:131]   [PA:0xfe190000, PA:0xfe1a0000) mmio (READ | WRITE | DEVICE | RESERVED)
-[102.395585 0 axruntime:207] Initialize global memory allocator...
-[102.396241 0 axruntime:208]   use TLSF allocator.
-[102.396890 0 axruntime:145] Initialize kernel page table...
-[102.397555 0 axruntime:149] Initialize platform devices...
-[102.398150 0 axhal::platform::aarch64_common::gic:121] Initialize GICv3...
-[102.398879 0 arm_gic::gic_v3:1213] gic_glb_init gic v3, GICD@0xffff0000fe600000, GICR@0xffff0000fe680000
-[102.399841 0 arm_gic::gic_v3:1162] DeviceRef new @ 0xffff0000fe600000
+[ 54.094333 0 axruntime:126] Logging is enabled.
+[ 54.094850 0 axruntime:127] Primary CPU 0 started, dtb = 0x200000.
+[ 54.095516 0 axruntime:129] Found physcial memory regions:
+[ 54.096118 0 axruntime:131]   [PA:0x400000, PA:0x410000) .text (READ | EXECUTE | RESERVED)
+[ 54.096971 0 axruntime:131]   [PA:0x410000, PA:0x415000) .rodata (READ | RESERVED)
+[ 54.097762 0 axruntime:131]   [PA:0x415000, PA:0x419000) .data .tdata .tbss .percpu (READ | WRITE | RESERVED)
+[ 54.098764 0 axruntime:131]   [PA:0x419000, PA:0x519000) boot stack (READ | WRITE | RESERVED)
+[ 54.099641 0 axruntime:131]   [PA:0x519000, PA:0x53f000) .bss (READ | WRITE | RESERVED)
+[ 54.100469 0 axruntime:131]   [PA:0x53f000, PA:0x40200000) free memory (READ | WRITE | FREE)
+[ 54.101339 0 axruntime:131]   [PA:0xfd5f8000, PA:0xfd5f9000) mmio (READ | WRITE | DEVICE | RESERVED)
+[ 54.102270 0 axruntime:131]   [PA:0xfd7c0000, PA:0xfd81c000) mmio (READ | WRITE | DEVICE | RESERVED)
+[ 54.103201 0 axruntime:131]   [PA:0xfeb50000, PA:0xfeb51000) mmio (READ | WRITE | DEVICE | RESERVED)
+[ 54.104132 0 axruntime:131]   [PA:0xfeba0000, PA:0xfeba1000) mmio (READ | WRITE | DEVICE | RESERVED)
+[ 54.105063 0 axruntime:131]   [PA:0xfec40000, PA:0xfec41000) mmio (READ | WRITE | DEVICE | RESERVED)
+[ 54.105993 0 axruntime:131]   [PA:0xfe600000, PA:0xfe620000) mmio (READ | WRITE | DEVICE | RESERVED)
+[ 54.106923 0 axruntime:131]   [PA:0xfe680000, PA:0xfe780000) mmio (READ | WRITE | DEVICE | RESERVED)
+[ 54.107855 0 axruntime:131]   [PA:0xfe180000, PA:0xfe190000) mmio (READ | WRITE | DEVICE | RESERVED)
+[ 54.108786 0 axruntime:131]   [PA:0xfe190000, PA:0xfe1a0000) mmio (READ | WRITE | DEVICE | RESERVED)
+[ 54.109717 0 axruntime:207] Initialize global memory allocator...
+[ 54.110373 0 axruntime:208]   use TLSF allocator.
+[ 54.111022 0 axruntime:145] Initialize kernel page table...
+[ 54.111684 0 axruntime:149] Initialize platform devices...
+[ 54.112280 0 axhal::platform::aarch64_common::gic:121] Initialize GICv3...
+[ 54.113008 0 arm_gic::gic_v3:1213] gic_glb_init gic v3, GICD@0xffff0000fe600000, GICR@0xffff0000fe680000
+[ 54.113970 0 arm_gic::gic_v3:1162] DeviceRef new @ 0xffff0000fe600000
 [W]>4[rust_shyper::arch::aarch64::vgicv3] emu_icenabler_access: vm[1] does not have interrupt 64
 [W]>4[rust_shyper::arch::aarch64::vgicv3] emu_activer_access: vm[1] does not have interrupt 64
 [W]>4[rust_shyper::arch::aarch64::vgicv3] emu_icenabler_access: vm[1] does not have interrupt 96
@@ -1380,7 +1532,7 @@ log_level = info
 [W]>4[rust_shyper::arch::aarch64::vgicv3] emu_ipriorityr_access: vm[1] does not have interrupt 32
 [W]>4[rust_shyper::arch::aarch64::vgicv3] emu_ipriorityr_access: vm[1] does not have interrupt 32
 [W]>4[rust_shyper::arch::aarch64::vgicv3] emu_ipriorityr_access: vm[1] does not have interrupt 32
-[102.521141 0 arm_gic::gic_v3:1162] DeviceRef new @ 0xffff0000fe680000
+[ 54.235265 0 arm_gic::gic_v3:1162] DeviceRef new @ 0xffff0000fe680000
 [W]>4[rust_shyper::arch::aarch64::vgicv3] emu_ipriorityr_access: vm[1] does not have interrupt 16
 [W]>4[rust_shyper::arch::aarch64::vgicv3] emu_ipriorityr_access: vm[1] does not have interrupt 20
 [W]>4[rust_shyper::arch::aarch64::vgicv3] emu_ipriorityr_access: vm[1] does not have interrupt 24
@@ -1388,11 +1540,11 @@ log_level = info
 [W]>4[rust_shyper::arch::aarch64::vgicv3] emu_ipriorityr_access: vm[1] does not have interrupt 28
 [E]>4[rust_shyper::arch::aarch64::vgicv3] emu_isenabler_access: vm[1] does not have interrupt 352
 [W]>4[rust_shyper::arch::aarch64::vgicv3] emu_ipriorityr_access: vm[1] does not have interrupt 364
-[102.527539 0 axtask::api:66] Initialize scheduling...
-[102.528134 0 axtask::api:72]   use FIFO scheduler.
-[102.528666 0 axruntime:175] Initialize interrupt handlers...
+[ 54.241663 0 axtask::api:66] Initialize scheduling...
+[ 54.242258 0 axtask::api:72]   use FIFO scheduler.
+[ 54.242792 0 axruntime:175] Initialize interrupt handlers...
 [W]>4[rust_shyper::arch::aarch64::vgicv3] emu_ipriorityr_access: vm[1] does not have interrupt 28
-[102.530087 0 axruntime:185] Primary CPU 0 init OK.
+[ 54.244213 0 axruntime:185] Primary CPU 0 init OK.
 Bencher init UART7 ...
 
 Read BUS_IOC, gpio4d default =0x1111, UART7 iomux = 0xaa
@@ -1418,16 +1570,16 @@ Benchmark: rdtsc
 Benchmark: spawn
   Iterations: 500000
   Benchmark total duration: 0 s
-  Average timer nanoseconds: 326 ns
+  Average timer nanoseconds: 327 ns
 
-CPU Freq = 960000000Hz, CPU Cycle Counter = 3744677361 from 121 to 3744677482, In 3s, 3774955485ns
+CPU Freq = 960000000Hz, CPU Cycle Counter = 3756076150 from 120 to 3756076270, In 3s, 3789271332ns
 
 Bencher: task switch ...
-AARCH64 Generic Timer Registers: CNTFRQ_EL0=24000000, CNTVCT_EL0=2552910690
-CPU0 cycle=3746260144, timer cnt=2552925173
+AARCH64 Generic Timer Registers: CNTFRQ_EL0=24000000, CNTVCT_EL0=1394398875
+CPU0 cycle=3757655195, timer cnt=1394413337
 PMUSERENR_EL0=0xf, PMCNTENSET_EL0=0x80000000, PMCR_EL0=0x410b3011
 Read GPIO_VER_ID=0x101157c
-Read GPIO_EXT_PORT=0x2df94020
+Read GPIO_EXT_PORT=0x2df9008c
 After every 100 million task switches, a GPIO UART signal will be output
 
 ---------
@@ -1439,10 +1591,9 @@ Bencher: 0 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 304
-  Average CPU cycles: 322
-  Max CPU cycles: 639
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 1 task switch count = 100000000
@@ -1452,9 +1603,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 308
   Average CPU cycles: 320
-  Max CPU cycles: 633
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 2 task switch count = 100000000
@@ -1466,9 +1616,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 353 ns
-  Min CPU cycles: 308
   Average CPU cycles: 322
-  Max CPU cycles: 625
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 3 task switch count = 100000000
@@ -1480,9 +1629,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 353 ns
-  Min CPU cycles: 310
   Average CPU cycles: 322
-  Max CPU cycles: 625
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 4 task switch count = 100000000
@@ -1491,10 +1639,9 @@ Bencher: 4 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 624
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 320
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 5 task switch count = 100000000
@@ -1505,10 +1652,9 @@ Bencher: 5 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 627
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 6 task switch count = 100000000
@@ -1518,9 +1664,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
   Average CPU cycles: 322
-  Max CPU cycles: 620
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 7 task switch count = 100000000
@@ -1528,8 +1673,8 @@ Bencher: 7 task switch count = 100000000
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 [D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 timed out waiting for input: auto-logout
-process '/sbin/getty 115200 ttyFIQ0' (pid 473) exited. Scheduling for restart.
-starting pid 499, tty '/dev/ttyFIQ0': '/sbin/getty 115200 ttyFIQ0'
+process '/sbin/getty 115200 ttyFIQ0' (pid 472) exited. Scheduling for restart.
+starting pid 501, tty '/dev/ttyFIQ0': '/sbin/getty 115200 ttyFIQ0'
 
 openEuler Embedded(openEuler Embedded Reference Distro) 24.03-LTS roc-rk3588s-pc /dev/ttyFIQ0
 
@@ -1551,10 +1696,9 @@ roc-rk3588s-pc login:
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 618
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 8 task switch count = 100000000
@@ -1565,10 +1709,9 @@ Bencher: 8 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 322
-  Max CPU cycles: 618
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 9 task switch count = 100000000
@@ -1577,10 +1720,9 @@ Bencher: 9 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 627
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 320
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 10 task switch count = 100000000
@@ -1592,9 +1734,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 352 ns
-  Min CPU cycles: 308
   Average CPU cycles: 321
-  Max CPU cycles: 616
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 11 task switch count = 100000000
@@ -1603,10 +1744,9 @@ Bencher: 11 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 614
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 12 task switch count = 100000000
@@ -1617,10 +1757,9 @@ Bencher: 12 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
+  Average timer nanoseconds: 352 ns
   Average CPU cycles: 322
-  Max CPU cycles: 609
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 13 task switch count = 100000000
@@ -1632,9 +1771,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 320
-  Max CPU cycles: 605
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 14 task switch count = 100000000
@@ -1643,10 +1781,9 @@ Bencher: 14 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 627
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 15 task switch count = 100000000
@@ -1657,36 +1794,33 @@ Bencher: 15 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 352 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 322
-  Max CPU cycles: 619
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 320
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 16 task switch count = 100000000
 2 THREADS switching GPIO3_C6 output between low and high
-[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 609
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 17 task switch count = 100000000
 2 THREADS switching GPIO3_C6 output between low and high
+[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
+[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
   Average CPU cycles: 322
-  Max CPU cycles: 626
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 18 task switch count = 100000000
@@ -1697,10 +1831,9 @@ Bencher: 18 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 352 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 321
-  Max CPU cycles: 616
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 320
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 19 task switch count = 100000000
@@ -1709,10 +1842,9 @@ Bencher: 19 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 630
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 320
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 20 task switch count = 100000000
@@ -1723,10 +1855,9 @@ Bencher: 20 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 605
+  Average timer nanoseconds: 353 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 21 task switch count = 100000000
@@ -1737,10 +1868,9 @@ Bencher: 21 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
+  Average timer nanoseconds: 352 ns
   Average CPU cycles: 322
-  Max CPU cycles: 628
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 22 task switch count = 100000000
@@ -1749,10 +1879,9 @@ Bencher: 22 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
+  Average timer nanoseconds: 352 ns
   Average CPU cycles: 322
-  Max CPU cycles: 620
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 23 task switch count = 100000000
@@ -1764,9 +1893,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 352 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 321
-  Max CPU cycles: 619
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 24 task switch count = 100000000
@@ -1775,10 +1903,9 @@ Bencher: 24 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 604
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 25 task switch count = 100000000
@@ -1789,10 +1916,9 @@ Bencher: 25 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 352 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 322
-  Max CPU cycles: 610
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 320
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 26 task switch count = 100000000
@@ -1804,9 +1930,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 353 ns
-  Min CPU cycles: 307
   Average CPU cycles: 322
-  Max CPU cycles: 627
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 27 task switch count = 100000000
@@ -1815,10 +1940,9 @@ Bencher: 27 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
+  Average timer nanoseconds: 352 ns
   Average CPU cycles: 322
-  Max CPU cycles: 627
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 28 task switch count = 100000000
@@ -1829,10 +1953,9 @@ Bencher: 28 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 310
+  Average timer nanoseconds: 352 ns
   Average CPU cycles: 322
-  Max CPU cycles: 615
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 29 task switch count = 100000000
@@ -1841,10 +1964,9 @@ Bencher: 29 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 629
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 30 task switch count = 100000000
@@ -1856,9 +1978,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 320
-  Max CPU cycles: 611
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 31 task switch count = 100000000
@@ -1870,9 +1991,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 628
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 32 task switch count = 100000000
@@ -1881,10 +2001,9 @@ Bencher: 32 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 609
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 33 task switch count = 100000000
@@ -1896,9 +2015,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 352 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 321
-  Max CPU cycles: 625
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 34 task switch count = 100000000
@@ -1907,10 +2025,9 @@ Bencher: 34 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 609
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 35 task switch count = 100000000
@@ -1922,9 +2039,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 353 ns
-  Min CPU cycles: 308
   Average CPU cycles: 322
-  Max CPU cycles: 615
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 36 task switch count = 100000000
@@ -1935,10 +2051,9 @@ Bencher: 36 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 352 ns
-  Min CPU cycles: 308
+  Average timer nanoseconds: 351 ns
   Average CPU cycles: 321
-  Max CPU cycles: 609
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 37 task switch count = 100000000
@@ -1948,9 +2063,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
   Average CPU cycles: 320
-  Max CPU cycles: 626
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 38 task switch count = 100000000
@@ -1961,10 +2075,9 @@ Bencher: 38 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 619
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 39 task switch count = 100000000
@@ -1976,9 +2089,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
   Average CPU cycles: 320
-  Max CPU cycles: 604
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 40 task switch count = 100000000
@@ -1987,10 +2099,9 @@ Bencher: 40 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 624
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 320
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 41 task switch count = 100000000
@@ -2002,9 +2113,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 352 ns
-  Min CPU cycles: 308
   Average CPU cycles: 321
-  Max CPU cycles: 625
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 42 task switch count = 100000000
@@ -2013,10 +2123,9 @@ Bencher: 42 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 619
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 320
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 43 task switch count = 100000000
@@ -2028,9 +2137,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
   Average CPU cycles: 320
-  Max CPU cycles: 623
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 44 task switch count = 100000000
@@ -2041,10 +2149,9 @@ Bencher: 44 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 623
+  Average timer nanoseconds: 353 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 45 task switch count = 100000000
@@ -2054,9 +2161,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
   Average CPU cycles: 320
-  Max CPU cycles: 618
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 46 task switch count = 100000000
@@ -2068,9 +2174,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 352 ns
-  Min CPU cycles: 307
   Average CPU cycles: 321
-  Max CPU cycles: 618
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 47 task switch count = 100000000
@@ -2080,9 +2185,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 624
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 48 task switch count = 100000000
@@ -2093,10 +2197,9 @@ Bencher: 48 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 603
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 49 task switch count = 100000000
@@ -2107,10 +2210,9 @@ Bencher: 49 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 322
-  Max CPU cycles: 632
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 50 task switch count = 100000000
@@ -2119,10 +2221,9 @@ Bencher: 50 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 603
+  Average timer nanoseconds: 353 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 51 task switch count = 100000000
@@ -2133,10 +2234,9 @@ Bencher: 51 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 623
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 320
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 52 task switch count = 100000000
@@ -2145,10 +2245,9 @@ Bencher: 52 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
+  Average timer nanoseconds: 352 ns
   Average CPU cycles: 322
-  Max CPU cycles: 614
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 53 task switch count = 100000000
@@ -2159,10 +2258,9 @@ Bencher: 53 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 624
+  Average timer nanoseconds: 353 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 54 task switch count = 100000000
@@ -2174,9 +2272,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 352 ns
-  Min CPU cycles: 308
   Average CPU cycles: 322
-  Max CPU cycles: 623
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 55 task switch count = 100000000
@@ -2185,10 +2282,9 @@ Bencher: 55 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 640
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 320
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 56 task switch count = 100000000
@@ -2200,9 +2296,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 352 ns
-  Min CPU cycles: 307
   Average CPU cycles: 321
-  Max CPU cycles: 624
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 57 task switch count = 100000000
@@ -2212,9 +2307,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
   Average CPU cycles: 320
-  Max CPU cycles: 621
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 58 task switch count = 100000000
@@ -2225,10 +2319,9 @@ Bencher: 58 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 320
-  Max CPU cycles: 605
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 59 task switch count = 100000000
@@ -2239,10 +2332,9 @@ Bencher: 59 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 321
-  Max CPU cycles: 626
+  Average timer nanoseconds: 353 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 60 task switch count = 100000000
@@ -2251,10 +2343,9 @@ Bencher: 60 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
+  Average timer nanoseconds: 352 ns
   Average CPU cycles: 322
-  Max CPU cycles: 615
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 61 task switch count = 100000000
@@ -2265,10 +2356,9 @@ Bencher: 61 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 628
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 62 task switch count = 100000000
@@ -2279,10 +2369,9 @@ Bencher: 62 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 607
+  Average timer nanoseconds: 353 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 63 task switch count = 100000000
@@ -2292,9 +2381,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
   Average CPU cycles: 320
-  Max CPU cycles: 618
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 64 task switch count = 100000000
@@ -2306,9 +2394,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 352 ns
-  Min CPU cycles: 307
   Average CPU cycles: 321
-  Max CPU cycles: 612
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 65 task switch count = 100000000
@@ -2317,10 +2404,9 @@ Bencher: 65 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 630
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 66 task switch count = 100000000
@@ -2331,10 +2417,9 @@ Bencher: 66 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 610
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 67 task switch count = 100000000
@@ -2346,9 +2431,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 353 ns
-  Min CPU cycles: 308
   Average CPU cycles: 322
-  Max CPU cycles: 625
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 68 task switch count = 100000000
@@ -2357,10 +2441,9 @@ Bencher: 68 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 615
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 69 task switch count = 100000000
@@ -2371,10 +2454,9 @@ Bencher: 69 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 626
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 70 task switch count = 100000000
@@ -2383,10 +2465,9 @@ Bencher: 70 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
+  Average timer nanoseconds: 352 ns
   Average CPU cycles: 322
-  Max CPU cycles: 622
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 71 task switch count = 100000000
@@ -2397,10 +2478,9 @@ Bencher: 71 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 617
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 72 task switch count = 100000000
@@ -2412,9 +2492,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
   Average CPU cycles: 320
-  Max CPU cycles: 629
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 73 task switch count = 100000000
@@ -2424,9 +2503,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
   Average CPU cycles: 320
-  Max CPU cycles: 626
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 74 task switch count = 100000000
@@ -2437,10 +2515,9 @@ Bencher: 74 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 352 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 322
-  Max CPU cycles: 625
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 75 task switch count = 100000000
@@ -2449,10 +2526,9 @@ Bencher: 75 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 624
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 320
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 76 task switch count = 100000000
@@ -2463,10 +2539,9 @@ Bencher: 76 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 308
+  Average timer nanoseconds: 352 ns
   Average CPU cycles: 322
-  Max CPU cycles: 618
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 77 task switch count = 100000000
@@ -2478,9 +2553,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 353 ns
-  Min CPU cycles: 308
   Average CPU cycles: 322
-  Max CPU cycles: 619
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 78 task switch count = 100000000
@@ -2489,10 +2563,9 @@ Bencher: 78 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 609
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 79 task switch count = 100000000
@@ -2503,10 +2576,9 @@ Bencher: 79 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 322
-  Max CPU cycles: 627
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 80 task switch count = 100000000
@@ -2515,10 +2587,9 @@ Bencher: 80 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 607
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 81 task switch count = 100000000
@@ -2529,10 +2600,9 @@ Bencher: 81 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 320
-  Max CPU cycles: 628
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 82 task switch count = 100000000
@@ -2543,10 +2613,9 @@ Bencher: 82 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 322
-  Max CPU cycles: 614
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 83 task switch count = 100000000
@@ -2555,10 +2624,9 @@ Bencher: 83 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 620
+  Average timer nanoseconds: 353 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 84 task switch count = 100000000
@@ -2570,9 +2638,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 352 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 321
-  Max CPU cycles: 609
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 85 task switch count = 100000000
@@ -2583,10 +2650,9 @@ Bencher: 85 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 624
+  Average timer nanoseconds: 353 ns
+  Average CPU cycles: 322
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 86 task switch count = 100000000
@@ -2595,10 +2661,9 @@ Bencher: 86 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 612
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 87 task switch count = 100000000
@@ -2609,10 +2674,9 @@ Bencher: 87 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 352 ns
-  Min CPU cycles: 307
+  Average timer nanoseconds: 351 ns
   Average CPU cycles: 321
-  Max CPU cycles: 623
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 88 task switch count = 100000000
@@ -2622,9 +2686,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
   Average CPU cycles: 320
-  Max CPU cycles: 610
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 89 task switch count = 100000000
@@ -2635,10 +2698,9 @@ Bencher: 89 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 352 ns
-  Min CPU cycles: 308
+  Average timer nanoseconds: 353 ns
   Average CPU cycles: 322
-  Max CPU cycles: 630
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 90 task switch count = 100000000
@@ -2650,9 +2712,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 308
   Average CPU cycles: 320
-  Max CPU cycles: 612
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 91 task switch count = 100000000
@@ -2661,10 +2722,9 @@ Bencher: 91 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
+  Average timer nanoseconds: 352 ns
   Average CPU cycles: 322
-  Max CPU cycles: 619
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 92 task switch count = 100000000
@@ -2675,10 +2735,9 @@ Bencher: 92 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 322
-  Max CPU cycles: 629
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 93 task switch count = 100000000
@@ -2687,10 +2746,9 @@ Bencher: 93 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 309
-  Average CPU cycles: 322
-  Max CPU cycles: 628
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 320
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 94 task switch count = 100000000
@@ -2702,9 +2760,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 623
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 95 task switch count = 100000000
@@ -2715,10 +2772,9 @@ Bencher: 95 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 352 ns
-  Min CPU cycles: 308
+  Average timer nanoseconds: 353 ns
   Average CPU cycles: 322
-  Max CPU cycles: 626
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 96 task switch count = 100000000
@@ -2728,9 +2784,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
   Average CPU cycles: 320
-  Max CPU cycles: 615
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 97 task switch count = 100000000
@@ -2741,10 +2796,9 @@ Bencher: 97 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 351 ns
-  Min CPU cycles: 307
-  Average CPU cycles: 320
-  Max CPU cycles: 628
+  Average timer nanoseconds: 352 ns
+  Average CPU cycles: 321
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 98 task switch count = 100000000
@@ -2754,9 +2808,8 @@ Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
   Average timer nanoseconds: 353 ns
-  Min CPU cycles: 310
   Average CPU cycles: 322
-  Max CPU cycles: 615
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 ---------
 Bencher: 99 task switch count = 100000000
@@ -2767,16 +2820,14 @@ Bencher: 99 task switch count = 100000000
 Benchmark: switch
   Iterations: 100000000
   Benchmark total duration: 35 s
-  Average timer nanoseconds: 353 ns
-  Min CPU cycles: 308
-  Average CPU cycles: 322
-  Max CPU cycles: 624
+  Average timer nanoseconds: 351 ns
+  Average CPU cycles: 320
+  CPU Freq: 888000000 Hz (0.888 GHz)
 
 Bencher end
-[3846.313687 0:2 axhal::platform::aarch64_common::psci:96] Shutting down...
+[3799.715071 0:2 axhal::platform::aarch64_common::psci:96] Shutting down...
+
 [D]>4[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x84000008, x1 0x0, x2 0x0, x3 0x0
-[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
-[D]>0[rust_shyper::arch::aarch64::psci] smc_guest_handler: fid 0x82000010, x1 0x0, x2 0x0, x3 0x0
 
 openEuler Embedded(openEuler Embedded Reference Distro) 24.03-LTS roc-rk3588s-pc /dev/ttyFIQ0
 
@@ -2791,7 +2842,3 @@ openEuler Embedded(openEuler Embedded Reference Distro) 24.03-LTS roc-rk3588s-pc
             |   __|     | . | -_| . | . | -_| . |
             |_____|_|_|_|___|___|___|___|___|___|
 
-
-Authorized uses only. All activity may be monitored and reported.
-
-roc-rk3588s-pc login: 
